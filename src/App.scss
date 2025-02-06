@@ -1,53 +1,38 @@
 /* Общие стили */
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif; /* Основной шрифт */
-  background-color: #18161f; /* Тёмный фон */
+  font-family: 'Montserrat', sans-serif; /* Основной шрифт */
+  background-color: #18161F; /* Тёмный фон */
   color: #fff; /* Белый цвет текста */
+  overflow: visible;
+}
 
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-
-  padding-inline: 40px;
+body.active-modal {
+  overflow: hidden;
 }
 
 /* Используем Open Sans для подзаголовков */
-h2,
-h3,
-.subtitle {
-  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
+h2, h3, .subtitle {
+  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
 }
 
-.main {
-  &__wrapper {
-    padding-top: 94px;
-  }
-}
-
-/* Видео на заднем фоне */
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1; /* Отправляем видео на задний план */
-}
-
-.video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Обрезаем видео по размеру блока */
-  opacity: 0.6; /* Прозрачность для наложения */
-}
 
 /* Контейнер для макета */
-.header__container {
-  max-width: 100vw; /* Ограничение ширины */
+.container {
+  max-width: 1920px; /* Ограничение ширины */
   padding: 0 40px; /* Одинаковые боковые отступы */
   margin: 0 auto; /* Центрирование */
-  opacity: 1;
+  box-sizing: border-box; /* Учитываем отступы в ширине */
+}
+
+
+.parallax {
+  background-image: url('./assets/img/paralax_img.png'); /* Указываем путь к иконке */
+  height: 500px;
+  background-attachment: fixed; /* Фиксируем фон */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Стили для шапки */
@@ -56,7 +41,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(24, 22, 31, 1);
+  background-color: rgba(24, 22, 31, 0); /* Прозрачный фон */
   z-index: 1000; /* Чтобы шапка всегда была поверх других элементов */
   padding: 0; /* Убираем внутренние отступы у header */
   transition: border-bottom 0.3s ease; /* Плавный переход для линии */
@@ -64,8 +49,9 @@ header {
 }
 
 header.scrolled {
+  background: rgba(24, 22, 31, 0.9); /* Полупрозрачный фон */
+  background-clip: padding-box; /* Применяем прозрачность только к фону */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Линия становится видимой */
-  background-color: rgba(24, 22, 31, 1); /* Полностью залитый фон */
 }
 
 /* Контейнер для централизации и боковых отступов */
@@ -83,19 +69,10 @@ header.scrolled {
 }
 
 /* Логотип */
-.logo {
-
-  &__button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-
-  &__img {
-    width: 50px; /* Размер логотипа */
-    height: auto; /* Сохраняем пропорции */
+.logo img {
+  width: 50px; /* Размер логотипа */
+  height: auto; /* Сохраняем пропорции */
   margin: 0; /* Без индивидуальных отступов */
-}
 }
 
 /* Меню */
@@ -119,13 +96,7 @@ header.scrolled {
 }
 
 .menu a:hover {
-  background: linear-gradient(
-    90deg,
-    #6819e8 0%,
-    #6f42c1 37%,
-    #d63384 71%,
-    #dc3545 100%
-  );
+  background: linear-gradient(90deg, #6819E8 0%, #6F42C1 37%, #D63384 71%, #DC3545 100%);
   -webkit-background-clip: text; /* Градиент применяется к тексту */
   -webkit-text-fill-color: transparent; /* Делаем текст прозрачным для градиента */
 }
@@ -147,7 +118,7 @@ header.scrolled {
   border-radius: 20px; /* Скругление, как у кнопки */
   font-size: 14px; /* Размер текста */
   cursor: pointer;
-  background-image: url("img/language-select.svg"); /* Указываем путь к иконке */
+  background-image: url('./assets/img/language-select.svg'); /* Указываем путь к иконке */
   background-repeat: no-repeat;
   background-position: right 10px center; /* Расположение иконки */
   background-size: 12px; /* Размер иконки */
@@ -161,9 +132,11 @@ header.scrolled {
   transform: translateY(-50%);
   width: 10px;
   height: 6px;
-  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%);
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
+
+
 
 select {
   appearance: none; /* Убираем стандартную стилизацию */
@@ -173,22 +146,24 @@ select {
   border: none; /* Убираем обводку */
   font-size: 14px; /* Размер текста */
   border-radius: 5px; /* Скруглённые углы */
-  background-image: url("img/language-select.svg"); /* Заменяем стандартный треугольник на свой */
+  background-image: url('./assets/img/language-select.svg'); /* Заменяем стандартный треугольник на свой */
   background-repeat: no-repeat;
   background-position: right 10px center; /* Позиционирование иконки */
 }
 
+
+
 /* Кнопка */
 .cta-button {
   display: inline-block;
-  width: 179px; /* Ширина кнопки */
+  width: 198px; /* Ширина кнопки */
   height: 54px; /* Высота кнопки */
   line-height: 54px; /* Вертикальное выравнивание текста */
   text-align: center; /* Центрирование текста */
   letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
   font-size: 16px; /* Размер текста */
   font-weight: 400; /* Толщина текста */
-  color: #18161f; /* Цвет текста (тёмный) */
+  color: #18161F; /* Цвет текста (тёмный) */
   background-color: #fff; /* Белый фон */
   border: none; /* Без обводки */
   border-radius: 20px; /* Закругленные края, половина высоты кнопки */
@@ -199,19 +174,15 @@ select {
 
 /* Эффект при наведении */
 .cta-button:hover {
-  background: linear-gradient(
-    90deg,
-    #6819e8 0%,
-    #6f42c1 37%,
-    #d63384 71%,
-    #dc3545 100%
-  );
+  background: linear-gradient(90deg, #6819E8 0%, #6F42C1 37%, #D63384 71%, #DC3545 100%);
   color: #fff; /* Белый текст на градиенте */
 }
 
 .cta-button:hover {
   background-color: #9247ff; /* Темнее при наведении */
 }
+
+
 
 /* Первый блок */
 .hero {
@@ -220,25 +191,24 @@ select {
   background-size: cover; /* Изображение растягивается, чтобы покрыть блок полностью */
   background-position: center; /* Центрируем изображение */
   background-repeat: no-repeat; /* Избегаем повторения изображения */
-  background-image: url("img/background-test-1.png"); /* Путь к изображению */
+  background-image: url('./assets/img/background-test-1.png'); /* Путь к изображению */
   color: #fff; /* Цвет текста */
-
 }
 
 /* Контейнер с содержимым */
 .hero-content {
-  // max-width: 1920px; /* Ограничение ширины текста */
-  margin: 0; /* Центрирование, если потребуется */
+  max-width: 1920px; /* Ограничение ширины текста */
+  margin: 0 auto; /* Центрирование, если потребуется */
   position: absolute; /* Позволяет точно позиционировать */
   top: 40vh; /* Расстояние от верхнего края экрана */
   left: 40px; /* Отступ слева, совпадающий с отступом контейнера */
   text-align: left; /* Выравнивание текста по левому краю */
-  z-index: 2;
+  z-index: 2
 }
 
 /* Заголовок */
 .hero-title {
-  font-family: "Montserrat", sans-serif; /* Шрифт для заголовка */
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
   font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
   font-weight: 400;
   line-height: 1.3;
@@ -247,19 +217,19 @@ select {
 }
 
 .hero-title span {
-  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%);
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
   -webkit-background-clip: text; /* Применяем градиент к тексту */
   -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
 }
 
 /* Подзаголовок */
 .hero-subtitle {
-  font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
+  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 25px;
-  color: #7f7d85; /* Полупрозрачный текст */
+  color: #7F7D85; /* Полупрозрачный текст */
 }
 
 /* Кнопки */
@@ -274,8 +244,8 @@ select {
 .btn {
   display: inline-block;
   padding: 15px 30px; /* Базовые отступы внутри */
-  font-family: "Montserrat", sans-serif; /* Шрифт кнопки */
-  font-weight: 500; /* Толщина шрифта */
+  font-family: 'Montserrat', sans-serif; /* Шрифт кнопки */
+  font-weight: 400; /* Толщина шрифта */
   text-align: center; /* Центрирование текста */
   cursor: pointer; /* Указатель при наведении */
   transition: all 0.3s ease; /* Плавный переход */
@@ -287,7 +257,7 @@ select {
 .btn-large {
   display: inline-block;
   font-size: 16px; /* Размер текста */
-  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
+  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
   font-weight: 400; /* Толщина текста */
   padding: 20px 30px; /* Отступы внутри кнопки */
   letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
@@ -302,7 +272,7 @@ select {
 .btn-small {
   display: inline-block;
   font-size: 16px; /* Размер текста */
-  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
+  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
   font-weight: 400; /* Толщина текста */
   padding: 20px 30px; /* Отступы внутри кнопки */
   letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
@@ -315,41 +285,28 @@ select {
 
 /* Первая кнопка: стили */
 .btn-primary {
-  background: linear-gradient(
-    90deg,
-    #6819e8 0%,
-    #dc3545 100%
-  ); /* Изначальный градиент */
+  background: linear-gradient(90deg, #D93461 0%, #6819E8 27%, #6F42C1 51%, #D63384 76%, #DC3545 100%); /* Изначальный градиент */
   color: #fff; /* Белый текст */
-  box-shadow: none; /* Без тени по умолчанию */
-  text-decoration: none;
+  background-size: 200% 200%; /* Увеличиваем размер фона */
+  transition: background-position 0.5s ease; /* Плавный переход позиции */
 }
 
 .btn-primary:hover {
-  background: linear-gradient(
-    90deg,
-    #dc3545 0%,
-    #6819e8 100%
-  ); /* Градиент в обратном направлении */
-  box-shadow: 0px 3px 10px rgba(104, 25, 232, 0.5); /* Тень при наведении */
+  background-position: 100% 0; /* Сдвигаем фон для анимации */
 }
 
 .btn-secondary {
-  display: flex;
   background: transparent; /* Прозрачный фон */
   color: #fff; /* Белый текст */
   padding: 15px 30px; /* Отступы внутри кнопки */
   border-radius: 20px; /* Закругленные углы */
-  border: 1px solid #2a2735; /* Обводка 1px заданного цвета */
-
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid #2A2735; /* Обводка 1px заданного цвета */
 }
 
 .btn-secondary:hover {
-  background: #2a2735; /* Более яркий фон при наведении */
+  background: #2A2735; /* Более яркий фон при наведении */
 }
+
 
 .scroll-indicator {
   margin-top: 40px;
@@ -357,8 +314,7 @@ select {
 }
 
 @keyframes bounce {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -389,20 +345,16 @@ select {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 0;
 }
+
 
 /* НАЧАЛО ВТОРОГО БЛОКА */
 
 /* Второй блок: Услуги */
 .services {
-  background-color: #18161f; /* Тёмный фон */
-  padding: 260px 0; /* Внешние отступы */
+  background-color: #18161F; /* Тёмный фон */
+  padding: 80px 0; /* Внешние отступы */
   color: #fff;
-
-  &__description {
-    max-width: 25%;
-  }
 }
 
 .services-header {
@@ -411,17 +363,31 @@ select {
 }
 
 .services-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(28px, 4vw, 36px); /* Адаптивный размер */
-  margin: 0 0 20px;
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 20px; /* Отступ снизу */
+  color: #fff; /* Белый текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.services-title span {
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+  -webkit-background-clip: text; /* Применяем градиент к тексту */
+  -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
 }
 
 .services-subtitle {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+  margin-bottom: 50px;
+  color: #7F7D85; /* Полупрозрачный текст */
+  text-align: center; /* Выравнивание текста по центру */
 }
+
 
 .services-list {
   display: flex;
@@ -429,16 +395,17 @@ select {
   gap: 20px; /* Расстояние между элементами */
 }
 
+/* Контейнер карточки */
 .services-item {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; /* Используем flex для горизонтального размещения элементов */
+  align-items: center; /* Центрируем элементы по вертикали */
   padding: 35px;
-  background: transparent; /* Полностью прозрачный фон */
-  border: 1px solid #3a3742; /* Базовый цвет обводки */
+  background: transparent; /* Прозрачный фон */
+  border: 1px solid #3A3742; /* Базовый цвет обводки */
   border-radius: 20px; /* Радиус углов */
-  transition: border-color 0.3s ease, transform 0.3s ease; /* Плавный переход обводки */
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer; /* Указатель при наведении */
 }
 
 .services-item:hover {
@@ -446,8 +413,9 @@ select {
   border-color: transparent; /* Убираем стандартный цвет обводки */
 }
 
+
 .services-item::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -455,9 +423,13 @@ select {
   bottom: 0;
   border-radius: 20px; /* Радиус углов */
   padding: 2px; /* Толщина обводки */
-  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%); /* Градиент */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Маска для сохранения внутренней части */
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: linear-gradient(90deg, #D93461 0%, #6819E8 27%, #6F42C1 51%, #D63384 76%, #DC3545 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); /* Маска для сохранения внутренней части */
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
   mask-composite: exclude; /* Убираем внутреннюю часть */
   -webkit-mask-composite: destination-out;
   z-index: -1; /* Отправляем за контент карточки */
@@ -465,9 +437,11 @@ select {
   transition: opacity 0.3s ease; /* Плавное появление */
 }
 
+
 .services-item:hover::before {
   opacity: 1; /* Показываем градиент при наведении */
 }
+
 
 .services-item > * {
   position: relative;
@@ -476,16 +450,16 @@ select {
 
 .services-icon {
   font-size: 37px;
-  background: linear-gradient(90deg, #6819e8, #dc3545); /* Задаем градиент */
+  margin-right: 20px; /* Отступ от текста */
+  background: #DC3545; /* Градиент */
   -webkit-background-clip: text; /* Применяем градиент только к тексту */
   -webkit-text-fill-color: transparent; /* Делаем фон текста прозрачным */
-  margin-right: 20px;
 }
 
 .services-content {
-  display: flex; /* Создаем две колонки */
-  justify-content: space-between; /* Распределяем элементы */
-  align-items: center; /* Вертикальное выравнивание */
+  flex: 1; /* Заполняет всё доступное пространство */
+  display: flex;
+  flex-direction: column; /* Размещаем заголовок и описание вертикально */
 }
 
 .services-left {
@@ -498,15 +472,14 @@ select {
 }
 
 .services-item-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  z-index: 10;
+  font-weight: 300; /* Тонкий кегль */
   margin: 0;
   color: #fff;
-  padding-right: 0px;
-  white-space: nowrap; /* Запрещаем перенос текста */
-  overflow: hidden; /* Скрываем текст, выходящий за границы */
-  font-weight: 300; /* Толщина шрифта Light */
+  white-space: nowrap; /* Запрещаем перенос строки */
+  overflow: hidden; /* Обрезаем текст, если он не помещается */
+  text-overflow: ellipsis; /* Добавляем многоточие, если текст обрезается */
 }
 
 /* Контейнер для описания */
@@ -518,18 +491,605 @@ select {
 }
 
 .services-item-desc {
-  font-family: "Open Sans", sans-serif; /* Шрифт описания */
-  font-size: 14px; /* Размер текста */
-  color: rgba(255, 255, 255, 0.7); /* Цвет текста */
+  font-family: 'Open Sans', sans-serif; /* Шрифт описания */
+  font-size: 16px; /* Размер текста */
+  font-weight: 300; /* Тонкий кегль */
+  color: #7F7D85; /* Цвет текста */
   margin: 0; /* Убираем внешние отступы */
-  // padding-left: 550px; /* Сдвиг текста вправо */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 675px; /* Фиксированное расстояние от левой границы карточки */
+  top: 50%; /* Центрируем текст по высоте */
+  transform: translateY(-50%); /* Для точного выравнивания по центру */
   line-height: 1.6; /* Высота строки */
-  white-space: wrap;
-  max-width: 30%;
+  max-width: 550px; /* Ограничиваем максимальную ширину строки */
+  word-wrap: break-word; /* Переносим текст, если он слишком длинный */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.services-item:hover .services-item-desc {
+  color: #FFFFFF; /* Новый цвет текста при наведении */
+  transition: color 0.1s ease; /* Плавный переход цвета */
 }
 
 .services-arrow {
   font-size: 25px;
-  padding-left: 100px; /* Сдвиг вправо */
-  color: #6819e8;
+  padding-left: 0px; /* Сдвиг вправо */
+  color: #7F7D85; /* Цвет по умолчанию */
+  transition: color 0.3s ease; /* Плавный переход для цвета */
+}
+
+.services-item:hover .services-arrow {
+  color: #DC3545; /* Новый цвет стрелки при наведении */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+
+
+/* Блок преимущества */
+
+.benefits {
+  background-color: #18161F;
+  color: #fff;
+  padding: 80px 0px;
+}
+
+.benefits-title {
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 40px; /* Отступ снизу */
+  color: #fff; /* Белый текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.benefits-title span {
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+  -webkit-background-clip: text; /* Применяем градиент к тексту */
+  -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
+}
+
+.benefits-title span {
+  color: #DC3545;
+}
+
+.benefits-subtitle {
+  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: #7F7D85; /* Полупрозрачный текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.benefits-cards {
+  display: grid; /* Используем Grid Layout */
+  grid-template-columns: repeat(3, 1fr); /* Всегда три карточки в ряду */
+  gap: 20px; /* Расстояние между карточками */
+  min-width: 100%; /* Ограничиваем ширину контейнера */
+  margin: 0; /* Центрируем контейнер по горизонтали */
+  justify-content: center; /* Центрируем карточки внутри контейнера */
+}
+
+.benefits-card {
+  padding: 40px; /* Внутренние отступы */
+  text-align: left; /* Выравнивание текста заголовка и подзаголовка влево */
+  transition: transform 0.3s, box-shadow 0.3s; /* Анимация для улучшения UX */
+  width: auto; /* Указанный размер карточки */
+  height: auto; /* Автоматическая высота */
+  background: transparent; /* Прозрачный фон */
+  position: relative; /* Для корректного наложения градиента */
+  border-radius: 20px; /* Радиус углов обводки */
+  overflow: hidden; /* Скрываем части, выходящие за пределы */
+  border: 1px solid #3A3742; /* Стандартная обводка */
+  z-index: 0; /* Базовый слой */
+}
+
+.benefits-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px; /* Радиус углов обводки */
+  padding: 2px; /* Толщина градиентной обводки */
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%); /* Градиент */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude; /* Убираем внутреннюю часть */
+  -webkit-mask-composite: destination-out; /* Для Safari */
+  z-index: -1; /* Псевдоэлемент за карточкой */
+  opacity: 0; /* По умолчанию градиент невидим */
+  transition: opacity 0s ease-in-out; /* Плавный переход для обводки */
+}
+
+.benefits-card:hover::before {
+  opacity: 1; /* Показываем стрелку при наведении */
+  transition: opacity 0.3s ease-in-out; /* Плавный переход только для появления */
+}
+
+.benefits-card:hover {
+  transform: translateY(-5px); /* Поднимаем карточку при наведении */
+  border-color: transparent; /* Делаем стандартную обводку невидимой */
+  z-index: 1; /* Выводим карточку поверх остальных */
+}
+
+.benefits-card:not(:hover) {
+  border-color: #3A3742; /* Возвращаем стандартную обводку после наведения */
+}
+
+.benefits-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #DC3545;
+}
+
+.benefits-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 30 0 18px;
+  color: #fff; /* Цвет заголовка */
+  position: relative; /* Для корректного отображения поверх градиента */
+  z-index: 2; /* Располагаем поверх */
+}
+
+
+.benefits-card p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  color: #7F7D85; /* Цвет подзаголовка */
+  line-height: 1.5; /* Межстрочный интервал */
+  position: relative; /* Для корректного отображения поверх градиента */
+  z-index: 2; /* Располагаем поверх */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.benefits-card:hover p {
+  color: #FFFFFF; /* Новый цвет текста при наведении */
+  transition: color 0.1s ease; /* Плавный переход цвета */
+}
+
+
+
+/* Блок с рекламой */
+
+.promo-block {
+  display: flex;
+  position: relative; /* Обязательно, чтобы absolute работал корректно */
+  justify-content: space-between;
+  align-items: center;
+  background: url('img/bck-promo.svg') center/cover no-repeat; /* Используем ваше изображение */
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin: 120px auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  overflow: hidden;
+  height: auto;
+  min-height: 300px; /* Задаем минимальную высоту блока */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.promo-block .container {
+  max-width: 1200px; /* Можно адаптировать под ваш сайт */
+  padding: 0 20px; /* Добавим боковые отступы */
+  margin: 0 auto; /* Центрирование содержимого */
+  display: flex; /* Используем flex для выравнивания */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-content {
+  flex: 1;
+  padding-right: 20px;
+  padding-left: 30px;
+}
+
+.promo-content h2 {
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin: auto;
+}
+
+.promo-content h2 span {
+  color: #ff4d4d; /* Акцентный цвет */
+}
+
+.promo-content p {
+  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #fff; /* Полупрозрачный текст */
+}
+
+.promo-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.promo-button {
+  display: inline-block;
+  width: 198px; /* Ширина кнопки */
+  height: 54px; /* Высота кнопки */
+  line-height: 54px; /* Вертикальное выравнивание текста */
+  text-align: center; /* Центрирование текста */
+  letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
+  font-size: 16px; /* Размер текста */
+  font-weight: 400; /* Толщина текста */
+  color: #18161F; /* Цвет текста (тёмный) */
+  background-color: #fff; /* Белый фон */
+  border: none; /* Без обводки */
+  border-radius: 20px; /* Закругленные края, половина высоты кнопки */
+  cursor: pointer; /* Указатель при наведении */
+  transition: all 0.3s ease; /* Плавный переход для наведения */
+  margin: 0; /* Убираем margin-right */
+}
+
+.promo-button:hover {
+  background: linear-gradient(90deg, #6819E8 0%, #6F42C1 37%, #D63384 71%, #DC3545 100%);
+  color: #fff; /* Белый текст на градиенте */
+}
+
+.promo-button:hover {
+  background-color: #e33a3a;
+}
+
+.promo-offer {
+  font-size: 14px;
+  font-weight: 300;
+  color: #A5A5A5;
+  display: flex; /* Flex для выравнивания текста и иконки */
+  align-items: center; /* Вертикальное выравнивание */
+  margin-left: 10px;
+}
+
+.promo-offer::before {
+  content: ''; /* Обязательно для отображения псевдоэлемента */
+  display: inline-block; /* Чтобы иконка отображалась */
+  width: 20px; /* Ширина иконки */
+  height: 20px; /* Высота иконки */
+  background: url('img/discount.svg') no-repeat center; /* Укажите путь к SVG */
+  background-size: contain; /* Иконка адаптируется под размеры */
+  margin-right: 8px; /* Отступ между иконкой и текстом */
+}
+
+.promo-image {
+  position: absolute;
+  bottom: 0; /* Привязка к нижней границе */
+  right: 0; /* Привязка к правой границе */
+  width: auto;
+  height: auto;
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Убедитесь, что padding не влияет на размеры */
+  object-fit: cover; /* Заполняет контейнер */
+}
+
+.promo-content {
+  flex: 1;
+  padding-right: 20px;
+  max-width: 50%; /* Убедитесь, что текстовая часть не занимает слишком много места */
+}
+
+.promo-image img {
+  display: block; /* Убирает возможные пробелы между inline элементами */
+  max-width: 100%;
+  height: auto;
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  border: none; /* Убедитесь, что нет рамки */
+  vertical-align: bottom; /* Убираем пробелы внизу */
+  margin-right: 80px;
+}
+
+
+/* БЛОК С ПОРТФОЛИО */
+
+/* Сетка */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Две колонки */
+  gap: 40px; /* Расстояние между карточками */
+  justify-content: center; /* Центрируем плитки внутри сетки */
+  align-items: center; /* Вертикальное выравнивание */
+  max-width: 100%; /* Ограничение ширины сетки */
+  margin: 0; /* Центрирование блока */
+  padding: 0; /* Отступы внутри блока сверху и снизу */
+}
+
+.portfolio-item {
+  position: relative; /* Для позиционирования элементов */
+  overflow: hidden; /* Ограничиваем содержимое */
+  border-radius: 10px; /* Закруглённые углы */
+  width: 100%; /* Полностью занимает колонку */
+  aspect-ratio: 16 / 9; /* Устанавливаем пропорции карточек */
+  transition: transform 0.3s ease; /* Плавный эффект при наведении */
+}
+
+
+.portfolio-item:hover {
+  transform: scale(1.02); /* Увеличение карточки */
+  cursor: pointer; /* Указатель при наведении */
+}
+
+/* Изображение */
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Увеличиваем изображение, чтобы заполнить карточку */
+  border-radius: 10px; /* Соответствует форме карточки */
+  transition: transform 0.3s ease; /* Анимация увеличения при наведении */
+}
+
+.portfolio-item:hover img {
+  transform: none; /* Убираем увеличение */
+}
+
+/* Градиент и текст */
+.portfolio-item::before {
+  content: ""; /* Создаем псевдоэлемент */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(104, 25, 232, 0.8) 0%, rgba(111, 66, 193, 0.8) 37%, rgba(214, 51, 132, 0.8) 71%, rgba(220, 53, 69, 0.8) 100%);
+  opacity: 0; /* Скрываем изначально */
+  transition: opacity 0.3s ease; /* Плавный переход */
+  z-index: 1; /* Размещаем под текстом */
+}
+
+.portfolio-item:hover::before {
+  opacity: 1; /* Показываем градиент */
+}
+
+.portfolio-hover {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #fff;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление текста */
+}
+
+.portfolio-item:hover .portfolio-hover {
+  opacity: 1;
+  transform: translateY(0); /* Поднимаем текст при наведении */
+}
+
+.portfolio-hover h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.portfolio-hover p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+  }
+}
+
+/* Попап */
+.portfolio-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* Скролл только по вертикали */
+  overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
+.portfolio-popup.active {
+  display: flex;
+  overflow: auto; /* Модальное окно управляет скроллом */
+}
+
+.portfolio-item.hidden {
+  display: none;
+}
+
+.portfolio-load-more {
+  display: block;
+    font-size: 16px; /* Размер текста */
+  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
+  font-weight: 400; /* Толщина текста */
+  gap: 40p;
+  margin: 20px auto; /* Центрируем с отступом */
+  background: transparent; /* Прозрачный фон */
+  color: #fff; /* Белый текст */
+  padding: 15px 30px; /* Отступы внутри кнопки */
+  border-radius: 20px; /* Закругленные углы */
+  border: 1px solid #2A2735; /* Обводка 1px заданного цвета */
+  cursor: pointer; /* Указатель при наведении */
+  transition: all 0.3s ease; /* Плавный переход эффектов */
+  text-align: center; /* Центровка текста */
+  display: inline-block; /* Для корректного отображения */
+  margin: 20px auto; /* Автоматическое центрирование по горизонтали */
+  width: 100%;
+  letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
+}
+
+.portfolio-load-more:hover {
+  background: #2A2735; /* Более яркий фон при наведении */
+}
+
+.portfolio-load-more:active {
+  transform: scale(0.98); /* Легкое уменьшение при клике */
+}
+
+.portfolio-load-more:focus {
+  outline: none; /* Убираем обводку по умолчанию */
+}
+
+.btn-loading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.popup-content img {
+  width: auto;
+  height: auto;
+  max-width: 90%; /* Убираем излишки */
+  max-height: 90%;
+  object-fit: contain; /* Масштабируем изображение с сохранением пропорций */
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none; /* Скрываем элементы */
+}
+
+
+
+
+
+/* БЛОК С БЛОГОМ */
+
+.blog-section {
+  padding: 60px 0;
+  background-color: #1E1C26; /* Тёмный фон */
+  color: #fff; /* Белый текст */
+}
+
+.blog-title {
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 20px; /* Отступ снизу */
+  color: #fff; /* Белый текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.blog-subtitle {
+  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: #7F7D85; /* Полупрозрачный текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Расстояние между карточками */
+}
+
+.blog-card {
+  background-color: #25242D;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.blog-card-excerpt {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+.blog-card-link {
+  color: #6819E8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.blog-card-link:hover {
+  color: #DC3545;
+}
+
+.blog-view-all {
+  display: block;
+  margin: 40px auto 0;
+  text-align: center;
+  background-color: #6819E8;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  width: 200px;
+  transition: background-color 0.3s;
+}
+
+.blog-view-all:hover {
+  background-color: #DC3545;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr; /* Одна колонка */
+  }
+
+  .blog-title {
+    font-size: 24px;
+  }
 }

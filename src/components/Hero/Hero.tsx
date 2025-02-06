@@ -23,16 +23,10 @@ const Hero = () => {
               готового проекту.
             </p>
             <div className="hero-buttons">
-              {/* todo: add anchors or links */}
-              <button
-                className="btn btn-primary btn-large"
-                onClick={handleDiscussProjectClick}
-              >
+              <button className="btn btn-primary btn-large">
                 Обговорити проект
               </button>
-              <Link className="btn btn-secondary btn-small" to="/">
-                Портфоліо
-              </Link>
+              <button className="btn btn-secondary btn-small">Портфоліо</button>
             </div>
           </div>
         </div>
