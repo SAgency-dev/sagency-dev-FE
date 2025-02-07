@@ -1,9 +1,7 @@
-import { Link } from "react-router-dom";
-
 const Hero = () => {
-  const handleDiscussProjectClick = (): void => {
-    window.alert("Discussing a project!");
-  };
+  // const handleDiscussProjectClick = (): void => {
+  //   window.alert("Discussing a project!");
+  // };
 
   return (
     <section className="hero">

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Benefits = () => {
   return (
     <section className="benefits">
