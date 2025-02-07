@@ -1,0 +1,15 @@
+@mixin gradient-button-hover {
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+}
+
+@mixin gradient-link-hover {
+  background: linear-gradient(90deg, #6819E8 0%, #6F42C1 37%, #D63384 71%, #DC3545 100%); 
+}
+
+@mixin transition-hover-link {
+  transition: all 0.3s ease;
+}
+
+@mixin transition-hover-button {
+  transition: all 0.5s ease;
+}

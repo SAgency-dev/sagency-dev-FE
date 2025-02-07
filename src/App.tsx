@@ -10,7 +10,9 @@ import Services from "./components/Services/Services";
 function App() {
   return (
     <>
-      <Header />
+      <header className="header">
+        <Header />
+      </header>
       <main>
         <div className="main__wrapper">
           <Hero />

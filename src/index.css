@@ -1,0 +1,23 @@
+* {
+  @apply font-corsa-grotesk tracking-normal text-white;
+  box-sizing: border-box;
+}
+
+body {
+  padding-inline: 20px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#root {
+  margin: auto;
+  text-align: start;
+  overflow: hidden;
+}
