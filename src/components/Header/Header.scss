@@ -11,6 +11,8 @@
   transition: border-bottom 0.3s ease; 
   border-bottom: 1px solid rgba(255, 255, 255, 0);
 
+  border-bottom: 1px solid #{$header-select-bgc};
+
   &.scrolled {
     background: #{$header-bgc-scrolled}; 
     background-clip: padding-box; 
@@ -52,8 +54,8 @@
     text-decoration: none; 
     font-size: 16px;
     font-weight: 500;
-    height: 92px;
-    line-height: 92px;
+    height: #{$header-height};
+    line-height: #{$header-height};
     color: #fff; 
     // transition: all 1s ease; 
     @include mixins.transition-hover-link;

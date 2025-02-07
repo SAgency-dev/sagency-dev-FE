@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: #{$header-select-bgc};
   border-radius: 20px;
   height: #{$header-button-height};
   line-height: #{$header-button-height};
@@ -17,24 +17,36 @@
   user-select: none;
 
   &.open .options {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: #{$header-select-padding};
   }
 }
 
 .custom-select .options {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #{$header-select-bgc}; 
+  top: -#{$header-select-padding};
+  left: -#{$header-select-padding};
+  width: calc(100% + 8px);
+  // background: #{$header-select-bgc-no-opacity}; 
+  background-color: #2f2937;
+  opacity: 1;
   border-radius: 20px;
   overflow: hidden;
   display: none;
+
+  // border: 1px white solid;
+
+  padding: #{$header-select-padding};
 }
 
+.selected {
+  &__option {
+    background: #{$header-select-bgc};
+  }
+}
 
 .custom-select .options li {
-  // padding: 10px 20px;
   cursor: pointer;  
   transition: all 0.3s;
 

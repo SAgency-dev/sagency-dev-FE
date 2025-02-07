@@ -33,7 +33,11 @@ export const Select = () => {
       {isOpen && (
         <ul className="options">
           {avaiableLanguages.map((option) => (
-            <li key={option} onClick={handleSelectLanguage}>
+            <li
+              key={option}
+              onClick={handleSelectLanguage}
+              className={`${selected === option ? "selected__option" : ""}`}
+            >
               {option}
             </li>
           ))}
