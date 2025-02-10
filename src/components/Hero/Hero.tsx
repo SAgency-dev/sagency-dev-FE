@@ -1,8 +1,4 @@
 const Hero = () => {
-  // const handleDiscussProjectClick = (): void => {
-  //   window.alert("Discussing a project!");
-  // };
-
   return (
     <section className="hero">
       <div className="background-container">

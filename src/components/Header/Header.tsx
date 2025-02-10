@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import LogoHeader from "../../assets/icons/LogoHeader";
-import { Select } from "../shared/Select/Select";
+import { Select } from "../shared/ui/Select/Select";
 import { useAppDispatch } from "../../store";
 import { DIALOG_TYPE, openDialog } from "../../store/dialog/slice";
 

@@ -1,18 +1,41 @@
-body {
+.app__wrapper {
+  position: relative;
   margin: 0;
-  font-family: 'Montserrat', sans-serif; /* Основной шрифт */
-  background-color: #18161F; /* Тёмный фон */
-  color: #fff; /* Белый цвет текста */
+  font-family: "Montserrat", sans-serif;
+  background-color: #18161f;
+  color: #fff;
   overflow: visible;
-}
 
-body.active-modal {
-  overflow: hidden;
+  &::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &.active-modal::before {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.active-modal {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
 }
 
 /* Используем Open Sans для подзаголовков */
-h2, h3, .subtitle {
-  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
+h2,
+h3,
+.subtitle {
+  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
 }
 
 /* Первый блок */
@@ -22,7 +45,7 @@ h2, h3, .subtitle {
   background-size: cover; /* Изображение растягивается, чтобы покрыть блок полностью */
   background-position: center; /* Центрируем изображение */
   background-repeat: no-repeat; /* Избегаем повторения изображения */
-  background-image: url('./images/background-test-1.png'); /* Путь к изображению */
+  background-image: url("./images/background-test-1.png"); /* Путь к изображению */
   color: #fff; /* Цвет текста */
 }
 
@@ -34,12 +57,12 @@ h2, h3, .subtitle {
   top: 40vh; /* Расстояние от верхнего края экрана */
   left: 40px; /* Отступ слева, совпадающий с отступом контейнера */
   text-align: left; /* Выравнивание текста по левому краю */
-  z-index: 2
+  z-index: 2;
 }
 
 /* Заголовок */
 .hero-title {
-  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-family: "Montserrat", sans-serif; /* Шрифт для заголовка */
   font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
   font-weight: 400;
   line-height: 1.3;
@@ -48,19 +71,19 @@ h2, h3, .subtitle {
 }
 
 .hero-title span {
-  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%);
   -webkit-background-clip: text; /* Применяем градиент к тексту */
   -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
 }
 
 /* Подзаголовок */
 .hero-subtitle {
-  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 25px;
-  color: #7F7D85; /* Полупрозрачный текст */
+  color: #7f7d85; /* Полупрозрачный текст */
 }
 
 /* Кнопки */
@@ -75,7 +98,7 @@ h2, h3, .subtitle {
 .btn {
   display: inline-block;
   padding: 15px 30px; /* Базовые отступы внутри */
-  font-family: 'Montserrat', sans-serif; /* Шрифт кнопки */
+  font-family: "Montserrat", sans-serif; /* Шрифт кнопки */
   font-weight: 400; /* Толщина шрифта */
   text-align: center; /* Центрирование текста */
   cursor: pointer; /* Указатель при наведении */
@@ -88,7 +111,7 @@ h2, h3, .subtitle {
 .btn-large {
   display: inline-block;
   font-size: 16px; /* Размер текста */
-  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
+  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
   font-weight: 400; /* Толщина текста */
   padding: 20px 30px; /* Отступы внутри кнопки */
   letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
@@ -103,7 +126,7 @@ h2, h3, .subtitle {
 .btn-small {
   display: inline-block;
   font-size: 16px; /* Размер текста */
-  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
+  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
   font-weight: 400; /* Толщина текста */
   padding: 20px 30px; /* Отступы внутри кнопки */
   letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
@@ -116,7 +139,14 @@ h2, h3, .subtitle {
 
 /* Первая кнопка: стили */
 .btn-primary {
-  background: linear-gradient(90deg, #D93461 0%, #6819E8 27%, #6F42C1 51%, #D63384 76%, #DC3545 100%); /* Изначальный градиент */
+  background: linear-gradient(
+    90deg,
+    #d93461 0%,
+    #6819e8 27%,
+    #6f42c1 51%,
+    #d63384 76%,
+    #dc3545 100%
+  ); /* Изначальный градиент */
   color: #fff; /* Белый текст */
   background-size: 200% 200%; /* Увеличиваем размер фона */
   transition: background-position 0.5s ease; /* Плавный переход позиции */
@@ -131,13 +161,12 @@ h2, h3, .subtitle {
   color: #fff; /* Белый текст */
   padding: 15px 30px; /* Отступы внутри кнопки */
   border-radius: 20px; /* Закругленные углы */
-  border: 1px solid #2A2735; /* Обводка 1px заданного цвета */
+  border: 1px solid #2a2735; /* Обводка 1px заданного цвета */
 }
 
 .btn-secondary:hover {
-  background: #2A2735; /* Более яркий фон при наведении */
+  background: #2a2735; /* Более яркий фон при наведении */
 }
-
 
 .scroll-indicator {
   margin-top: 40px;
@@ -145,7 +174,8 @@ h2, h3, .subtitle {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -178,12 +208,11 @@ h2, h3, .subtitle {
   height: 100%;
 }
 
-
 /* НАЧАЛО ВТОРОГО БЛОКА */
 
 /* Второй блок: Услуги */
 .services {
-  background-color: #18161F; /* Тёмный фон */
+  background-color: #18161f; /* Тёмный фон */
   padding: 80px 0; /* Внешние отступы */
   color: #fff;
 }
@@ -194,7 +223,7 @@ h2, h3, .subtitle {
 }
 
 .services-title {
-  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-family: "Montserrat", sans-serif; /* Шрифт для заголовка */
   font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
   font-weight: 400;
   line-height: 1.3;
@@ -204,21 +233,20 @@ h2, h3, .subtitle {
 }
 
 .services-title span {
-  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%);
   -webkit-background-clip: text; /* Применяем градиент к тексту */
   -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
 }
 
 .services-subtitle {
-  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 50px;
-  color: #7F7D85; /* Полупрозрачный текст */
+  color: #7f7d85; /* Полупрозрачный текст */
   text-align: center; /* Выравнивание текста по центру */
 }
-
 
 .services-list {
   display: flex;
@@ -233,7 +261,7 @@ h2, h3, .subtitle {
   align-items: center; /* Центрируем элементы по вертикали */
   padding: 35px;
   background: transparent; /* Прозрачный фон */
-  border: 1px solid #3A3742; /* Базовый цвет обводки */
+  border: 1px solid #3a3742; /* Базовый цвет обводки */
   border-radius: 20px; /* Радиус углов */
   transition: border-color 0.3s ease, transform 0.3s ease;
   cursor: pointer; /* Указатель при наведении */
@@ -244,9 +272,8 @@ h2, h3, .subtitle {
   border-color: transparent; /* Убираем стандартный цвет обводки */
 }
 
-
 .services-item::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -254,13 +281,16 @@ h2, h3, .subtitle {
   bottom: 0;
   border-radius: 20px; /* Радиус углов */
   padding: 2px; /* Толщина обводки */
-  background: linear-gradient(90deg, #D93461 0%, #6819E8 27%, #6F42C1 51%, #D63384 76%, #DC3545 100%);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0); /* Маска для сохранения внутренней части */
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+  background: linear-gradient(
+    90deg,
+    #d93461 0%,
+    #6819e8 27%,
+    #6f42c1 51%,
+    #d63384 76%,
+    #dc3545 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Маска для сохранения внутренней части */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude; /* Убираем внутреннюю часть */
   -webkit-mask-composite: destination-out;
   z-index: -1; /* Отправляем за контент карточки */
@@ -268,11 +298,9 @@ h2, h3, .subtitle {
   transition: opacity 0.3s ease; /* Плавное появление */
 }
 
-
 .services-item:hover::before {
   opacity: 1; /* Показываем градиент при наведении */
 }
-
 
 .services-item > * {
   position: relative;
@@ -282,7 +310,7 @@ h2, h3, .subtitle {
 .services-icon {
   font-size: 37px;
   margin-right: 20px; /* Отступ от текста */
-  background: #DC3545; /* Градиент */
+  background: #dc3545; /* Градиент */
   -webkit-background-clip: text; /* Применяем градиент только к тексту */
   -webkit-text-fill-color: transparent; /* Делаем фон текста прозрачным */
 }
@@ -303,7 +331,7 @@ h2, h3, .subtitle {
 }
 
 .services-item-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 300; /* Тонкий кегль */
   margin: 0;
@@ -322,10 +350,10 @@ h2, h3, .subtitle {
 }
 
 .services-item-desc {
-  font-family: 'Open Sans', sans-serif; /* Шрифт описания */
+  font-family: "Open Sans", sans-serif; /* Шрифт описания */
   font-size: 16px; /* Размер текста */
   font-weight: 300; /* Тонкий кегль */
-  color: #7F7D85; /* Цвет текста */
+  color: #7f7d85; /* Цвет текста */
   margin: 0; /* Убираем внешние отступы */
   position: absolute; /* Абсолютное позиционирование */
   left: 675px; /* Фиксированное расстояние от левой границы карточки */
@@ -338,34 +366,32 @@ h2, h3, .subtitle {
 }
 
 .services-item:hover .services-item-desc {
-  color: #FFFFFF; /* Новый цвет текста при наведении */
+  color: #ffffff; /* Новый цвет текста при наведении */
   transition: color 0.1s ease; /* Плавный переход цвета */
 }
 
 .services-arrow {
   font-size: 25px;
   padding-left: 0px; /* Сдвиг вправо */
-  color: #7F7D85; /* Цвет по умолчанию */
+  color: #7f7d85; /* Цвет по умолчанию */
   transition: color 0.3s ease; /* Плавный переход для цвета */
 }
 
 .services-item:hover .services-arrow {
-  color: #DC3545; /* Новый цвет стрелки при наведении */
+  color: #dc3545; /* Новый цвет стрелки при наведении */
   transition: color 0.3s ease; /* Плавный переход цвета */
 }
-
-
 
 /* Блок преимущества */
 
 .benefits {
-  background-color: #18161F;
+  background-color: #18161f;
   color: #fff;
   padding: 80px 0px;
 }
 
 .benefits-title {
-  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-family: "Montserrat", sans-serif; /* Шрифт для заголовка */
   font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
   font-weight: 500;
   line-height: 1.3;
@@ -375,22 +401,22 @@ h2, h3, .subtitle {
 }
 
 .benefits-title span {
-  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%);
   -webkit-background-clip: text; /* Применяем градиент к тексту */
   -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
 }
 
 .benefits-title span {
-  color: #DC3545;
+  color: #dc3545;
 }
 
 .benefits-subtitle {
-  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 50px;
-  color: #7F7D85; /* Полупрозрачный текст */
+  color: #7f7d85; /* Полупрозрачный текст */
   text-align: center; /* Выравнивание текста по центру */
 }
 
@@ -413,12 +439,12 @@ h2, h3, .subtitle {
   position: relative; /* Для корректного наложения градиента */
   border-radius: 20px; /* Радиус углов обводки */
   overflow: hidden; /* Скрываем части, выходящие за пределы */
-  border: 1px solid #3A3742; /* Стандартная обводка */
+  border: 1px solid #3a3742; /* Стандартная обводка */
   z-index: 0; /* Базовый слой */
 }
 
 .benefits-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -426,7 +452,7 @@ h2, h3, .subtitle {
   bottom: 0;
   border-radius: 20px; /* Радиус углов обводки */
   padding: 2px; /* Толщина градиентной обводки */
-  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%); /* Градиент */
+  background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%); /* Градиент */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude; /* Убираем внутреннюю часть */
@@ -448,17 +474,17 @@ h2, h3, .subtitle {
 }
 
 .benefits-card:not(:hover) {
-  border-color: #3A3742; /* Возвращаем стандартную обводку после наведения */
+  border-color: #3a3742; /* Возвращаем стандартную обводку после наведения */
 }
 
 .benefits-icon {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #DC3545;
+  color: #dc3545;
 }
 
 .benefits-card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 300;
   margin: 30 0 18px;
@@ -467,13 +493,12 @@ h2, h3, .subtitle {
   z-index: 2; /* Располагаем поверх */
 }
 
-
 .benefits-card p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 300;
   margin: 0;
-  color: #7F7D85; /* Цвет подзаголовка */
+  color: #7f7d85; /* Цвет подзаголовка */
   line-height: 1.5; /* Межстрочный интервал */
   position: relative; /* Для корректного отображения поверх градиента */
   z-index: 2; /* Располагаем поверх */
@@ -481,11 +506,9 @@ h2, h3, .subtitle {
 }
 
 .benefits-card:hover p {
-  color: #FFFFFF; /* Новый цвет текста при наведении */
+  color: #ffffff; /* Новый цвет текста при наведении */
   transition: color 0.1s ease; /* Плавный переход цвета */
 }
-
-
 
 /* Блок с рекламой */
 
@@ -494,7 +517,7 @@ h2, h3, .subtitle {
   position: relative; /* Обязательно, чтобы absolute работал корректно */
   justify-content: space-between;
   align-items: center;
-  background: url('img/bck-promo.svg') center/cover no-repeat; /* Используем ваше изображение */
+  background: url("img/bck-promo.svg") center/cover no-repeat; /* Используем ваше изображение */
   padding: 40px 20px;
   border-radius: 20px;
   margin: 120px auto;
@@ -533,7 +556,7 @@ h2, h3, .subtitle {
 }
 
 .promo-content p {
-  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
@@ -556,7 +579,7 @@ h2, h3, .subtitle {
   letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
   font-size: 16px; /* Размер текста */
   font-weight: 400; /* Толщина текста */
-  color: #18161F; /* Цвет текста (тёмный) */
+  color: #18161f; /* Цвет текста (тёмный) */
   background-color: #fff; /* Белый фон */
   border: none; /* Без обводки */
   border-radius: 20px; /* Закругленные края, половина высоты кнопки */
@@ -566,7 +589,13 @@ h2, h3, .subtitle {
 }
 
 .promo-button:hover {
-  background: linear-gradient(90deg, #6819E8 0%, #6F42C1 37%, #D63384 71%, #DC3545 100%);
+  background: linear-gradient(
+    90deg,
+    #6819e8 0%,
+    #6f42c1 37%,
+    #d63384 71%,
+    #dc3545 100%
+  );
   color: #fff; /* Белый текст на градиенте */
 }
 
@@ -577,18 +606,18 @@ h2, h3, .subtitle {
 .promo-offer {
   font-size: 14px;
   font-weight: 300;
-  color: #A5A5A5;
+  color: #a5a5a5;
   display: flex; /* Flex для выравнивания текста и иконки */
   align-items: center; /* Вертикальное выравнивание */
   margin-left: 10px;
 }
 
 .promo-offer::before {
-  content: ''; /* Обязательно для отображения псевдоэлемента */
+  content: ""; /* Обязательно для отображения псевдоэлемента */
   display: inline-block; /* Чтобы иконка отображалась */
   width: 20px; /* Ширина иконки */
   height: 20px; /* Высота иконки */
-  background: url('img/discount.svg') no-repeat center; /* Укажите путь к SVG */
+  background: url("img/discount.svg") no-repeat center; /* Укажите путь к SVG */
   background-size: contain; /* Иконка адаптируется под размеры */
   margin-right: 8px; /* Отступ между иконкой и текстом */
 }
@@ -622,7 +651,6 @@ h2, h3, .subtitle {
   margin-right: 80px;
 }
 
-
 /* БЛОК С ПОРТФОЛИО */
 
 /* Сетка */
@@ -646,7 +674,6 @@ h2, h3, .subtitle {
   aspect-ratio: 16 / 9; /* Устанавливаем пропорции карточек */
   transition: transform 0.3s ease; /* Плавный эффект при наведении */
 }
-
 
 .portfolio-item:hover {
   transform: scale(1.02); /* Увеличение карточки */
@@ -674,7 +701,13 @@ h2, h3, .subtitle {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(104, 25, 232, 0.8) 0%, rgba(111, 66, 193, 0.8) 37%, rgba(214, 51, 132, 0.8) 71%, rgba(220, 53, 69, 0.8) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(104, 25, 232, 0.8) 0%,
+    rgba(111, 66, 193, 0.8) 37%,
+    rgba(214, 51, 132, 0.8) 71%,
+    rgba(220, 53, 69, 0.8) 100%
+  );
   opacity: 0; /* Скрываем изначально */
   transition: opacity 0.3s ease; /* Плавный переход */
   z-index: 1; /* Размещаем под текстом */
@@ -745,8 +778,8 @@ h2, h3, .subtitle {
 
 .portfolio-load-more {
   display: block;
-    font-size: 16px; /* Размер текста */
-  font-family: 'Open Sans', sans-serif; /* Вторичный шрифт */
+  font-size: 16px; /* Размер текста */
+  font-family: "Open Sans", sans-serif; /* Вторичный шрифт */
   font-weight: 400; /* Толщина текста */
   gap: 40p;
   margin: 20px auto; /* Центрируем с отступом */
@@ -754,7 +787,7 @@ h2, h3, .subtitle {
   color: #fff; /* Белый текст */
   padding: 15px 30px; /* Отступы внутри кнопки */
   border-radius: 20px; /* Закругленные углы */
-  border: 1px solid #2A2735; /* Обводка 1px заданного цвета */
+  border: 1px solid #2a2735; /* Обводка 1px заданного цвета */
   cursor: pointer; /* Указатель при наведении */
   transition: all 0.3s ease; /* Плавный переход эффектов */
   text-align: center; /* Центровка текста */
@@ -765,7 +798,7 @@ h2, h3, .subtitle {
 }
 
 .portfolio-load-more:hover {
-  background: #2A2735; /* Более яркий фон при наведении */
+  background: #2a2735; /* Более яркий фон при наведении */
 }
 
 .portfolio-load-more:active {
@@ -783,7 +816,6 @@ h2, h3, .subtitle {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 
 .popup-content {
   position: relative;
@@ -812,20 +844,16 @@ h2, h3, .subtitle {
   display: none; /* Скрываем элементы */
 }
 
-
-
-
-
 /* БЛОК С БЛОГОМ */
 
 .blog-section {
   padding: 60px 0;
-  background-color: #1E1C26; /* Тёмный фон */
+  background-color: #1e1c26; /* Тёмный фон */
   color: #fff; /* Белый текст */
 }
 
 .blog-title {
-  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-family: "Montserrat", sans-serif; /* Шрифт для заголовка */
   font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
   font-weight: 500;
   line-height: 1.3;
@@ -835,12 +863,12 @@ h2, h3, .subtitle {
 }
 
 .blog-subtitle {
-  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
+  font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 50px;
-  color: #7F7D85; /* Полупрозрачный текст */
+  color: #7f7d85; /* Полупрозрачный текст */
   text-align: center; /* Выравнивание текста по центру */
 }
 
@@ -851,7 +879,7 @@ h2, h3, .subtitle {
 }
 
 .blog-card {
-  background-color: #25242D;
+  background-color: #25242d;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -873,34 +901,34 @@ h2, h3, .subtitle {
 }
 
 .blog-card-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   margin: 0 0 10px;
 }
 
 .blog-card-excerpt {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   color: #bbb;
   margin-bottom: 15px;
 }
 
 .blog-card-link {
-  color: #6819E8;
+  color: #6819e8;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
 }
 
 .blog-card-link:hover {
-  color: #DC3545;
+  color: #dc3545;
 }
 
 .blog-view-all {
   display: block;
   margin: 40px auto 0;
   text-align: center;
-  background-color: #6819E8;
+  background-color: #6819e8;
   color: #fff;
   padding: 15px 30px;
   border-radius: 20px;
@@ -912,7 +940,7 @@ h2, h3, .subtitle {
 }
 
 .blog-view-all:hover {
-  background-color: #DC3545;
+  background-color: #dc3545;
 }
 
 @media (max-width: 768px) {

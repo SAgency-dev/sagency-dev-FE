@@ -1,5 +1,5 @@
-@use './../../../styles/mixins.scss' as mixins;
-@use './../../../styles/vars.scss' as *;
+@use "./../../../../styles/mixins.scss" as mixins;
+@use "./../../../../styles/vars.scss" as *;
 
 .custom-select {
   position: relative;
@@ -28,7 +28,7 @@
   top: -#{$header-select-padding};
   left: -#{$header-select-padding};
   width: calc(100% + 8px);
-  // background: #{$header-select-bgc-no-opacity}; 
+  // background: #{$header-select-bgc-no-opacity};
   background-color: #2f2937;
   opacity: 1;
   border-radius: 20px;
@@ -47,7 +47,7 @@
 }
 
 .custom-select .options li {
-  cursor: pointer;  
+  cursor: pointer;
   transition: all 0.3s;
 
   display: flex;

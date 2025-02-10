@@ -15,13 +15,13 @@ export type DialogId = keyof typeof DIALOG_TYPE;
 
 export type DialogState = {
   [DIALOG_TYPE.feedback]: {
-    open: boolean;
+    isOpened: boolean;
   };
 };
 
 const initialState: DialogState = {
   feedback: {
-    open: false,
+    isOpened: false,
   },
 };
 
@@ -34,9 +34,8 @@ const dialogSlice = createSlice({
       action: PayloadAction<{ id: DialogId }>
     ) => {
       const { id } = action.payload;
-      window.alert("Dialog is opened!");
 
-      state[id].open = true;
+      state[id].isOpened = true;
     },
     closeDialog: (
       state: DialogState,
@@ -44,7 +43,7 @@ const dialogSlice = createSlice({
     ) => {
       const { id } = action.payload;
 
-      state[id].open = false;
+      state[id].isOpened = false;
     },
   },
 });
