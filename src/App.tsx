@@ -9,7 +9,7 @@ import Services from "./components/Services/Services";
 
 function App() {
   return (
-    <>
+    <div className="no-scrollbar">
       <header className="header">
         <Header />
       </header>
@@ -24,7 +24,7 @@ function App() {
         </div>
       </main>
       <footer>Footer should be here</footer>
-    </>
+    </div>
   );
 }
 
