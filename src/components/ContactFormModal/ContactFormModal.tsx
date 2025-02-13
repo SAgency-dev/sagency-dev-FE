@@ -3,14 +3,11 @@ import FacebookIcon from "../../assets/icons/FacebookIcon";
 import InstagramIcon from "../../assets/icons/InstagramIcon";
 import TelegramIcon from "../../assets/icons/TelegramIcon";
 import ViberIcon from "../../assets/icons/ViberIcon";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch } from "../../store";
 import { closeDialog, DIALOG_TYPE } from "../../store/dialog/slice";
 import "./ContactFormModal.scss";
 
 const ContactFormModal = () => {
-  const isModalShown = useAppSelector(
-    (state) => state.dialog[DIALOG_TYPE.feedback].isOpened
-  );
   const dispatch = useAppDispatch();
 
   const handleCloseModal = () => {
