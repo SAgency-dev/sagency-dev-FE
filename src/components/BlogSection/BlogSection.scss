@@ -1,0 +1,66 @@
+@use "./../../styles/vars.scss" as *;
+@use "./../../styles/mixins.scss" as mixins;
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  background-color: $header-bgc;
+  margin-top: 80px;
+  padding: 80px 65px 60px 65px;
+  background-color: rgba(24, 22, 30, 1); /* Тёмный фон */
+  color: #fff; /* Белый текст */
+
+  &__title {
+    font-family: "Montserrat", sans-serif; /* Шрифт для заголовка */
+    font-size: clamp(36px, 5vw, 62px); /* Адаптивный размер заголовка */
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin-bottom: 6px;
+    color: #fff; /* Белый текст */
+    text-align: center; /* Выравнивание текста по центру */
+  }
+
+  &__subtitle {
+    font-family: "Open Sans", sans-serif; /* Шрифт для подзаголовка */
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: $modal-text-color; /* Полупрозрачный текст */
+    text-align: center; /* Выравнивание текста по центру */
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: 20px; /* Расстояние между карточками */
+  }
+
+  &__view-all {
+    margin-top: 56px;
+    overflow: hidden;
+    transition: all 0.3s, box-shadow 0.3s;
+
+    font-family: "Open-Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 5%;
+    color: white;
+
+    padding: 16px 30px;
+    width: 142px;
+    align-self: center;
+
+    border: 1px solid rgba(42, 39, 53, 1);
+    border-radius: 20px;
+    background-color: inherit;
+
+    &:hover {
+      @include mixins.gradient-button-hover;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

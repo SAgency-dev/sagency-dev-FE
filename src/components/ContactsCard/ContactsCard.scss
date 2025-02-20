@@ -1,0 +1,19 @@
+@use "./../../styles/vars.scss" as *;
+@use "./../../styles/mixins.scss" as mixins;
+
+.contacts-card {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #18161f;
+  height: 252px;
+  width: 262px;
+
+  border: 1px solid $header-select-bgc;
+  border-radius: 20px;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 18px;
+}

@@ -12,6 +12,7 @@ import { DIALOG_TYPE } from "./store/dialog/slice";
 
 import classNames from "classnames";
 import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
+import Contacts from "./components/Contacts/Contacts";
 
 function App() {
   const isModalOpened = useAppSelector(
@@ -40,6 +41,7 @@ function App() {
           <PromoBlock />
           <Portfolio />
           <BlogSection />
+          <Contacts />
         </div>
         {isModalOpened && <ContactFormModal />}
       </main>
