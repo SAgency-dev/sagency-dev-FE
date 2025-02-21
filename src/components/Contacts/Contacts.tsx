@@ -1,4 +1,7 @@
-import ViberIcon from "../../assets/icons/ViberIcon";
+import TelegramRoundIcon from "../../assets/icons/TelegramRoundIcon";
+import ViberRoundIcon from "../../assets/icons/ViberRoundIcon";
+import WhatsAppIcon from "../../assets/icons/WhatsAppIcon";
+import WorldIcon from "../../assets/icons/WorldIcon";
 import ContactsCard from "../ContactsCard/ContactsCard";
 import "./Contacts.scss";
 
@@ -11,10 +14,10 @@ const Contacts = () => {
         связи.
       </p>
       <div className="contacts__grid">
-        <ContactsCard icon={<ViberIcon />} title="" />
-        {/* <ContactsCard />
-        <ContactsCard />
-        <ContactsCard /> */}
+        <ContactsCard icon={<ViberRoundIcon />} title="Viber" />
+        <ContactsCard icon={<TelegramRoundIcon />} title="Telegram" />
+        <ContactsCard icon={<WhatsAppIcon />} title="WhatsApp" />
+        <ContactsCard icon={<WorldIcon />} title="Залишити заявку" />
       </div>
     </div>
   );

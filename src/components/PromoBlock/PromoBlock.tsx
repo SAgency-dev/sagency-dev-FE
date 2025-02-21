@@ -16,7 +16,7 @@ const PromoBlock = () => {
         </div>
       </div>
       <div className="promo-image">
-        <img src="./../../assets/img/promo-ppl.png" alt="Promotional Image" />
+        <img src="./images/promo-ppl.png" alt="Promotional Image" />
       </div>
     </section>
   );

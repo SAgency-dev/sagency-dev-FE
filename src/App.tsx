@@ -13,6 +13,7 @@ import { DIALOG_TYPE } from "./store/dialog/slice";
 import classNames from "classnames";
 import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
 import Contacts from "./components/Contacts/Contacts";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const isModalOpened = useAppSelector(
@@ -45,7 +46,7 @@ function App() {
         </div>
         {isModalOpened && <ContactFormModal />}
       </main>
-      <footer>Footer should be here</footer>
+      <Footer />
     </div>
   );
 }

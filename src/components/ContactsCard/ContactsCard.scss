@@ -4,16 +4,73 @@
 .contacts-card {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
-  background-color: #18161f;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./../../assets/backgrounds/contact-card-bgi.jpg");
+  background-position: center;
+  background-size: cover;
   height: 252px;
   width: 262px;
 
-  border: 1px solid $header-select-bgc;
+  border: 1px solid $modal-border;
   border-radius: 20px;
 
-  justify-content: center;
   align-items: center;
 
   padding: 18px;
+  padding-top: 60px;
+
+  &__top-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 48px;
+
+    justify-content: center;
+    align-items: center;
+
+    &--icon {
+      border-radius: 50%;
+    }
+
+    &--title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: white;
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 100%;
+    min-height: 42px;
+
+    cursor: pointer;
+
+    background-color: $secondary-gray;
+    border: none;
+    border-radius: 20px;
+
+    display: block;
+    text-align: center;
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: 1.5;
+    letter-spacing: 5%;
+    color: white;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      @include mixins.gradient-link-hover;
+      background-color: #9247ff;
+    }
+  }
 }
