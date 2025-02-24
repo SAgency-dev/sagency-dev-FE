@@ -13,35 +13,44 @@ const Services = () => {
           </p>
         </div>
         <div className="services-list">
-          <div className="services-item">
-            <div className="services-icon">#</div>
-            <div className="services-content">
-              <h3 className="services-item-title">
-                Лендінг (односторінковий сайт)
-              </h3>
-              <p className="services-item-desc">
-                * Створення лендінгу, що продає для просування конкретного
-                продукту або послуги.
-              </p>
-            </div>
-            <div className="services-arrow">→</div>
-          </div>
+          <ServicesCard
+            title="Лендінг (односторінковий сайт)"
+            description="* Створення лендінгу, що продає для просування конкретного
+            продукту або послуги."
+          />
           <ServicesCard
             title="Редизайн наявного сайту"
             description="* Оновлення застарілого сайту з акцентом на покращення дизайну і
                 функціональності."
           />
-          <div className="services-item">
-            <div className="services-icon">#</div>
-            <div className="services-content">
-              <h3 className="services-item-title">Редизайн наявного сайту</h3>
-              <p className="services-item-desc services__description">
-                * Оновлення застарілого сайту з акцентом на покращення дизайну і
-                функціональності.
-              </p>
-            </div>
-            <div className="services-arrow">→</div>
-          </div>
+          <ServicesCard
+            title="Сайт-візитка"
+            description="* Компактний сайт з основною інформацією про компанію або послуги, що підходить для невеликих бізнесів."
+          />
+          <ServicesCard
+            title="Корпоративні сайти"
+            description="* Сайти для великих компаній із функціями, необхідними для взаємодії з клієнтами та партнерами."
+          />
+          <ServicesCard
+            title="Інтернет-магазин"
+            description="* Розробка сайту для продажу товарів онлайн з інтеграцією платіжних систем і кошика."
+          />
+          <ServicesCard
+            title="Логотип"
+            description="* Створення унікального логотипу для посилення бренду і підвищення впізнаваності."
+          />
+          <ServicesCard
+            title="Оформлення соціальних мереж"
+            description="* Розробка дизайну для профілів, постів і обкладинок у соціальних мережах, які привертають увагу і відповідають бренду."
+          />
+          <ServicesCard
+            title="Розробка фірмового стилю (бренду)"
+            description="* Створення повного брендбуку, що включає логотип, палітру, шрифти та інші елементи для посилення впізнаваності бренду."
+          />
+          <ServicesCard
+            title="Банери та рекламні креативи"
+            description="* Створення яскравих і ефективних банерів, а також рекламних креативів для просування продуктів і послуг в рамках арбітражу трафіку, які привертають увагу і сприяють підвищенню конверсії."
+          />
         </div>
       </div>
     </section>

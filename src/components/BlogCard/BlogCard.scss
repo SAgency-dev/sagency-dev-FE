@@ -1,9 +1,16 @@
 @use "./../../styles/vars.scss" as *;
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .card {
   background-color: $primary-gray;
   position: relative;
   min-height: 430px;
+
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
