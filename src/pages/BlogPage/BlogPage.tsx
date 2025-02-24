@@ -1,4 +1,4 @@
-import BlogCard from "../BlogCard/BlogCard";
+import BlogCard from "../../components/BlogCard/BlogCard";
 import "./BlogPage.scss";
 
 const BlogPage = () => {

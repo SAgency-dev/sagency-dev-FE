@@ -1,4 +1,5 @@
-import './Services.scss';
+import ServicesCard from "../ServicesCard/ServicesCard";
+import "./Services.scss";
 
 const Services = () => {
   return (
@@ -25,17 +26,11 @@ const Services = () => {
             </div>
             <div className="services-arrow">→</div>
           </div>
-          <div className="services-item">
-            <div className="services-icon">#</div>
-            <div className="services-content">
-              <h3 className="services-item-title">Редизайн наявного сайту</h3>
-              <p className="services-item-desc">
-                * Оновлення застарілого сайту з акцентом на покращення дизайну і
-                функціональності.
-              </p>
-            </div>
-            <div className="services-arrow">→</div>
-          </div>
+          <ServicesCard
+            title="Редизайн наявного сайту"
+            description="* Оновлення застарілого сайту з акцентом на покращення дизайну і
+                функціональності."
+          />
           <div className="services-item">
             <div className="services-icon">#</div>
             <div className="services-content">

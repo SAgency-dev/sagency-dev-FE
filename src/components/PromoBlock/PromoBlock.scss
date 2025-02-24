@@ -1,8 +1,10 @@
 @use './../../styles/mixins.scss' as mixins;
+@use './../../styles/vars.scss' as *;
 
 .promo-block {
-    margin-inline: 0;
-    padding: 0;
+    position: relative;
+    padding: 45px;
+    box-sizing: content-box;
 
     @include mixins.inline-padding;
 }
@@ -12,11 +14,14 @@
 }
 
 .promo-image {
-    height: 100%;
-    width: 300px;
+    position: absolute;
+    right: 56px;
+    height: 365px;
+    width: 303px;
     background-image: url('./../../assets/images/promo-ppl.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: left;
 }
 
 img:first-child {
