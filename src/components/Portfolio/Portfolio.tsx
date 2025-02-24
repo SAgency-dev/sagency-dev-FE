@@ -73,7 +73,7 @@ const Portfolio = () => {
             <div className="portfolio-hover">
               <h3>Название проекта 2</h3>
               <p>Краткое описание проекта</p>
-            </div>
+            </div>  
           </div>
           <div
             className="portfolio-item hidden"
