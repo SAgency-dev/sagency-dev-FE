@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import BlogPage from "./pages/BlogPage/BlogPage";
+import BlogPage from "./components/BlogPage/BlogPage";
 import { store } from "./store";
 import HomePage from "./pages/HomePage/HomePage";
 

@@ -517,7 +517,7 @@ h3,
   position: relative; /* Обязательно, чтобы absolute работал корректно */
   justify-content: space-between;
   align-items: center;
-  background: url("images/bck-promo.svg") center/cover no-repeat; /* Используем ваше изображение */
+  background: url("/sagency-dev-FE/images/bck-promo.svg") center/cover no-repeat; /* Используем ваше изображение */
   padding: 40px 20px;
   border-radius: 20px;
   margin: 120px auto;
@@ -617,7 +617,7 @@ h3,
   display: inline-block; /* Чтобы иконка отображалась */
   width: 20px; /* Ширина иконки */
   height: 20px; /* Высота иконки */
-  background: url("images/discount.svg") no-repeat center; /* Укажите путь к SVG */
+  background: url("/sagency-dev-FE/images/discount.svg") no-repeat center; /* Укажите путь к SVG */
   background-size: contain; /* Иконка адаптируется под размеры */
   margin-right: 8px; /* Отступ между иконкой и текстом */
 }
