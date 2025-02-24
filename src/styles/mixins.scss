@@ -1,3 +1,5 @@
+@use './vars.scss' as *;
+
 @mixin gradient-button-hover {
   background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
 }
@@ -12,4 +14,8 @@
 
 @mixin transition-hover-button {
   transition: all 0.5s ease;
+}
+
+@mixin inline-padding {
+    padding-inline: $inline-padding;
 }

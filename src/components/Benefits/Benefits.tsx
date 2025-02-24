@@ -1,3 +1,5 @@
+import './Benefits.scss';
+
 const Benefits = () => {
   return (
     <section className="benefits">

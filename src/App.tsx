@@ -1,28 +1,17 @@
-import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
 import "./App.scss";
-import Benefits from "./components/Benefits/Benefits";
-import BlogSection from "./components/BlogSection/BlogSection";
 import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import Portfolio from "./components/Portfolio/Portfolio";
-import PromoBlock from "./components/PromoBlock/PromoBlock";
-import Services from "./components/Services/Services";
 import { useAppSelector } from "./store";
 import { DIALOG_TYPE } from "./store/dialog/slice";
 
 import classNames from "classnames";
-import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
-import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer/Footer";
+import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
 
 function App() {
   const isModalOpened = useAppSelector(
     (state) => state.dialog[DIALOG_TYPE.feedback].isOpened
   );
-
-  useEffect(() => {
-    console.log(`Modal is in state: ${isModalOpened}`);
-  });
 
   return (
     <div
@@ -31,22 +20,13 @@ function App() {
         isModalOpened ? "active-modal" : ""
       )}
     >
-      <header className="header">
-        <Header />
-      </header>
+      <Header />
       <main>
-        <div className="main__wrapper">
-          <Hero />
-          <Benefits />
-          <Services />
-          <PromoBlock />
-          <Portfolio />
-          <BlogSection />
-          <Contacts />
-        </div>
-        {isModalOpened && <ContactFormModal />}
+        <Outlet />
       </main>
       <Footer />
+
+      {isModalOpened && <ContactFormModal />}
     </div>
   );
 }

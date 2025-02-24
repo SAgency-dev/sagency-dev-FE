@@ -1,3 +1,5 @@
+import './PromoBlock.scss';
+
 const PromoBlock = () => {
   return (
     <section className="promo-block">
@@ -15,9 +17,7 @@ const PromoBlock = () => {
           <span className="promo-offer">Пропозиція діє до 05.01.2025</span>
         </div>
       </div>
-      <div className="promo-image">
-        <img src="./images/promo-ppl.png" alt="Promotional Image" />
-      </div>
+      <div className="promo-image" />
     </section>
   );
 };

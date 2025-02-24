@@ -1,3 +1,5 @@
+@use './../../styles/vars.scss' as *;
+
 .footer {
   display: flex;
   min-height: 286px;
@@ -12,4 +14,6 @@
   line-height: 1.2;
   letter-spacing: 0;
   color: white;
+
+  border-top: 1px solid $header-select-bgc;
 }

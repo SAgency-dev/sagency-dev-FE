@@ -1,3 +1,5 @@
+import './Services.scss';
+
 const Services = () => {
   return (
     <section className="services">

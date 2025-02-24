@@ -1,0 +1,5 @@
+@use './../../styles/mixins.scss' as mixins;
+
+.portfolio-grid {
+    @include mixins.inline-padding;
+}

@@ -1,3 +1,5 @@
+import './Portfolio.scss';
+
 const Portfolio = () => {
   return (
     <section className="portfolio">
@@ -67,7 +69,7 @@ const Portfolio = () => {
             className="portfolio-item hidden"
             data-full="./images/portfolio/work_2_full.jpg"
           >
-            <img src="img/Portfolio/work_2.jpg" alt="Project Name 2" />
+            <img src="./images/portfolio/work_2.jpg" alt="Project Name 2" />
             <div className="portfolio-hover">
               <h3>Название проекта 2</h3>
               <p>Краткое описание проекта</p>
@@ -77,7 +79,7 @@ const Portfolio = () => {
             className="portfolio-item hidden"
             data-full="img/Portfolio/work_1.jpg"
           >
-            <img src="img/Portfolio/work_2.jpg" alt="Project Name 2" />
+            <img src="./images/portfolio/work_2.jpg" alt="Project Name 2" />
             <div className="portfolio-hover">
               <h3>Название проекта 2</h3>
               <p>Краткое описание проекта</p>
