@@ -12,7 +12,7 @@ const Root = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="/" element={<App />}>
+            <Route path="sagency-dev-FE/" element={<App />}>
               <Route index element={<HomePage />} /> 
               <Route path="blog">
                 <Route index element={<BlogPage />} />
