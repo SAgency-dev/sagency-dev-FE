@@ -9,10 +9,10 @@ import HomePage from "./pages/HomePage/HomePage";
 const Root = () => {
   return (
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/sagency-dev-FE">
         <Provider store={store}>
           <Routes>
-            <Route path="sagency-dev-FE/" element={<App />}>
+            <Route path="/" element={<App />}>
               <Route index element={<HomePage />} /> 
               <Route path="blog">
                 <Route index element={<BlogPage />} />
