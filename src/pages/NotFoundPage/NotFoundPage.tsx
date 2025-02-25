@@ -11,7 +11,7 @@ const NotFoundPage = () => {
 
   return (
     <div className="not-found">
-      <button type="button" onClick={() => navigate(-1)} className="not-found__back">
+      <button type="button" onClick={handleGoBack} className="not-found__back">
         Go Back
       </button>
       <p className="not-found__text">Page Not Found</p>
