@@ -41,9 +41,13 @@
   }
 
   &__view-all {
-    margin-top: 56px;
+    margin-top: 28px;
     overflow: hidden;
     transition: all 0.3s, box-shadow 0.3s;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
 
     font-family: "Open-Sans", sans-serif;
     font-weight: 400;
@@ -53,12 +57,13 @@
     color: white;
 
     padding: 16px 30px;
-    width: 142px;
     align-self: center;
 
     border: 1px solid rgba(42, 39, 53, 1);
     border-radius: 20px;
     background-color: inherit;
+
+    transition: box-shadow 1s ease-in;
 
     &:hover {
       @include mixins.gradient-button-hover;

@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import './Portfolio.scss';
 
 const Portfolio = () => {
   return (
     <section className="portfolio">
-      <div className="container">
+      <div className="portfolio__wrapper">
         <h2 className="benefits-title">Портфоліо</h2>
         <div className="portfolio-grid">
           <div
@@ -93,12 +94,10 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-        <div className="btn-loading">
-          <button id="loadMore" className="portfolio-load-more">
-            Завантажити ще
-          </button>
-        </div>
       </div>
+          <Link to={'/portfolio'} id="loadMore" className="portfolio__button">
+            Завантажити ще
+          </Link>
     </section>
   );
 };

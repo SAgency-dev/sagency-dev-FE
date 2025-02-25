@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CalendarIcon from "../../assets/icons/CalendarIcon";
 import "./BlogCard.scss";
 
@@ -7,9 +7,19 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ slug }: BlogCardProps) => {
+    const location = useLocation();
+
+    const navigateToBlogArticle = (slug: string) => {
+        if (location.pathname.includes('/blog')) {
+            
+            return slug;
+        }
+        return 'blog/' + slug;
+    }
+
   return (
     <div className="card">
-      <Link to={`${slug ? slug : '101-blog-article'}`}>
+      <Link to={navigateToBlogArticle(slug ? slug : '101-blog-article')}>
         <img
           src="images/blog/blog-case-1.jpg"
           alt="Название статьи"

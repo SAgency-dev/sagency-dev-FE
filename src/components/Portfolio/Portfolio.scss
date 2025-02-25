@@ -2,4 +2,42 @@
 
 .portfolio-grid {
     @include mixins.inline-padding;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.portfolio__button {
+    display: flex;
+    justify-self: center;
+    cursor: pointer;
+
+    margin-top: 25px;
+    margin-bottom: 0;
+
+    overflow: hidden;
+    transition: all 0.3s, box-shadow 0.3s;
+
+    font-family: "Open-Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 5%;
+    color: white;
+
+    padding: 16px 30px;
+    align-self: center;
+
+    border: 1px solid rgba(42, 39, 53, 1);
+    border-radius: 20px;
+    background-color: inherit;
+
+    &:hover {
+      @include mixins.gradient-button-hover;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.portfolio__wrapper {
+    display: block;
+    
 }

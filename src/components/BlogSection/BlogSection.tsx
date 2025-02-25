@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BlogCard from "../BlogCard/BlogCard";
 import "./BlogSection.scss";
 
@@ -16,9 +17,9 @@ const BlogSection = () => {
         <BlogCard />
         <BlogCard />
       </div>
-      <button type="button" className="blog__view-all">
+      <Link to={'/blog'} className="blog__view-all">
         Всі новини
-      </button>
+      </Link>
     </section>
   );
 };

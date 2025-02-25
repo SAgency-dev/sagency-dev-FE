@@ -1,16 +1,23 @@
 @use "./../../styles/vars.scss" as *;
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card {
   background-color: $primary-gray;
   position: relative;
   min-height: 430px;
-
   cursor: pointer;
+
+  // TODO 26.02.2025: add Hover effect
+
+//   will-change: transform;
+
+//   :hover {
+//     transform: scale(1.05);
+//   }
 
   display: flex;
   flex-direction: column;

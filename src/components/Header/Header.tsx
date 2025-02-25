@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LogoHeader from "../../assets/icons/LogoHeader";
 import { useAppDispatch } from "../../store";
 import { DIALOG_TYPE, openDialog } from "../../store/dialog/slice";
@@ -17,9 +17,9 @@ const Header = () => {
       <div className="header__container">
         <nav className="nav">
           <div className="nav__logo">
-            <NavLink to="/" className="nav__logo--link">
+            <Link to="/" className="nav__logo--link">
               <LogoHeader />
-            </NavLink>
+            </Link>
           </div>
           <ul className="nav__list">
             <li className="nav__item">

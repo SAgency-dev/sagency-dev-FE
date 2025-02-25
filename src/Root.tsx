@@ -5,20 +5,23 @@ import App from "./App";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import { store } from "./store";
 import HomePage from "./pages/HomePage/HomePage";
+import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const Root = () => {
   return (
     <StrictMode>
-      <BrowserRouter basename="/sagency-dev-FE">
+      <BrowserRouter basename="/sagency-dev-FE/">
         <Provider store={store}>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<App />}>
-              <Route index element={<HomePage />} /> 
+              <Route index element={<HomePage />} />
               <Route path="blog">
                 <Route index element={<BlogPage />} />
               </Route>
             </Route>
-            <Route path="*" element={<p>Page Not Found</p>} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Provider>
       </BrowserRouter>
