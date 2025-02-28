@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch } from "../../store";
 import { MODAL_TYPE, openModal } from "../../store/modal/slice";
-import PortfolioWorkModal from "../PortfolioWorkModal/PortfolioWorkModal";
 import "./PortfolioCard.scss";
 
 interface PortfolioCardProps {

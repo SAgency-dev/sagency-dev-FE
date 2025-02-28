@@ -2,18 +2,18 @@ import { StrictMode } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import BlogPage from "./pages/BlogPage/BlogPage";
-import { store } from "./store";
-import HomePage from "./pages/HomePage/HomePage";
 import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
+import BlogPage from "./pages/BlogPage/BlogPage";
+import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import { store } from "./store";
 
 const Root = () => {
   return (
     <StrictMode>
       <BrowserRouter basename="/sagency-dev-FE/">
         <Provider store={store}>
-          {/* <ScrollToTop /> */}
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<App />}>
               <Route index element={<HomePage />} />
