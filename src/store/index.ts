@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import dialogSlice from "./dialog/slice";
+import modalSlice from './modal/slice';
 
 export const store = configureStore({
   reducer: {
     dialog: dialogSlice,
+    modal: modalSlice,
   },
 });
 

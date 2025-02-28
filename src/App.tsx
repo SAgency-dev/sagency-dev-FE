@@ -7,17 +7,22 @@ import { DIALOG_TYPE } from "./store/dialog/slice";
 import classNames from "classnames";
 import Footer from "./components/Footer/Footer";
 import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
+import { MODAL_TYPE } from "./store/modal/slice";
 
 function App() {
-  const isModalOpened = useAppSelector(
+  const isDialogOpened = useAppSelector(
     (state) => state.dialog[DIALOG_TYPE.feedback].isOpened
+  );
+
+  const isModalOpened = useAppSelector(
+    (state) => state.modal[MODAL_TYPE.portfolio].isOpened
   );
 
   return (
     <div
       className={classNames(
         "app__wrapper",
-        isModalOpened ? "active-modal" : ""
+        isDialogOpened ? "active-modal" : ""
       )}
     >
       <Header />
@@ -26,6 +31,7 @@ function App() {
       </main>
       <Footer />
 
+      {isDialogOpened && <ContactFormModal />}
       {isModalOpened && <ContactFormModal />}
     </div>
   );
