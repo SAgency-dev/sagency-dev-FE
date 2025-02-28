@@ -1,0 +1,39 @@
+.popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow-y: auto;
+    overflow-x: hidden; 
+
+    &__close {
+        position: fixed;
+        top: 20px;
+        right: 50px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        padding-block: 4px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: #454545;
+        border-radius: 10px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+  }
+  

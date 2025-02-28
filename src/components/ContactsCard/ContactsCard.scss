@@ -71,6 +71,7 @@
     &:hover {
       @include mixins.gradient-link-hover;
       background-color: #9247ff;
+      @include mixins.box-shadowing-basic;
     }
   }
 }

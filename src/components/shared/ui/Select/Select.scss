@@ -21,6 +21,12 @@
     flex-direction: column;
     gap: #{$header-select-padding};
   }
+
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    @include mixins.box-shadowing-basic;
+  }
 }
 
 .custom-select .options {

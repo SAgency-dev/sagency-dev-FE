@@ -10,6 +10,7 @@ export type ModalState = {
   [MODAL_TYPE.portfolio]: {
     isOpened: boolean;
     workId: string | null;
+    workLink: string | null;
   };
 };
 
@@ -17,6 +18,7 @@ const initialState: ModalState = {
   portfolio: {
     isOpened: false,
     workId: null,
+    workLink: null,
   },
 };
 
@@ -26,21 +28,24 @@ const modalSlice = createSlice({
   reducers: {
     openModal: (
       state: ModalState,
-      action: PayloadAction<{ id: ModalId; workId?: string }>
+      action: PayloadAction<{ id: ModalId; workId?: string; workLink?: string }>
     ) => {
-      const { id, workId } = action.payload;
+      const { id, workId, workLink } = action.payload;
 
+      console.log(`WorkString is ${workLink}`)
       state[id].isOpened = true;
       state[id].workId = workId || null;
+      state[id].workLink = workLink || null;
     },
     closeModal: (
       state: ModalState,
-      action: PayloadAction<{ id: ModalId; workId?: string }>
+      action: PayloadAction<{ id: ModalId; workId?: string | null }>
     ) => {
       const { id } = action.payload;
 
       state[id].isOpened = false;
       state[id].workId = null;
+      state[id].workLink = null;
     },
   },
 });

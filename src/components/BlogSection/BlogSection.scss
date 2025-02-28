@@ -63,11 +63,11 @@
     border-radius: 20px;
     background-color: inherit;
 
-    transition: background 0.3s ease-in, box-shadow 0.3s;
+    transition: all 0.3s ease-in;
 
     &:hover {
       @include mixins.gradient-button-hover;
-      box-shadow: 0 0 11px $modal-text-color;
+      @include mixins.box-shadowing-basic;
     }
   }
 }

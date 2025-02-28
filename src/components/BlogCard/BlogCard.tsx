@@ -19,7 +19,7 @@ const BlogCard = ({ slug }: BlogCardProps) => {
 
   return (
     <div className="blog-card">
-      {/* <Link to={navigateToBlogArticle(slug ? slug : '101-blog-article')}> */}
+      <Link to={navigateToBlogArticle(slug ? slug : '101-blog-article')}>
         <img
           src="images/blog/blog-case-1.jpg"
           alt="Название статьи"
@@ -43,7 +43,7 @@ const BlogCard = ({ slug }: BlogCardProps) => {
             </p>
           </div>
         </div>
-      {/* </Link> */}
+      </Link>
     </div>
   );
 };

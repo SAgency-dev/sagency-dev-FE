@@ -11,7 +11,7 @@ const Portfolio = () => {
           <PortfolioCard
             id="1"
             image="./images/portfolio/work_1.jpg"
-            fullImage="img/Portfolio/work_1_full.jpg"
+            fullImage="./images/portfolio/work_1_full.jpg"
             alt="Project Name"
             description="Краткое описание"
             name="Название проекта"
@@ -20,7 +20,7 @@ const Portfolio = () => {
           <PortfolioCard
             id="2"
             image="./images/portfolio/work_1.jpg"
-            fullImage="img/Portfolio/work_1_full.jpg"
+            fullImage="./images/portfolio/work_1_full.jpg"
             alt="Project Name"
             description="Краткое описание"
             name="Название проекта"
@@ -29,7 +29,7 @@ const Portfolio = () => {
           <PortfolioCard
             id="3"
             image="./images/portfolio/work_1.jpg"
-            fullImage="img/Portfolio/work_1_full.jpg"
+            fullImage="./images/portfolio/work_1_full.jpg"
             alt="Project Name"
             description="Краткое описание"
             name="Название проекта"
@@ -38,7 +38,7 @@ const Portfolio = () => {
           <PortfolioCard
             id="4"
             image="./images/portfolio/work_1.jpg"
-            fullImage="img/Portfolio/work_1_full.jpg"
+            fullImage="./images/portfolio/work_1_full.jpg"
             alt="Project Name"
             description="Краткое описание"
             name="Название проекта"
@@ -47,7 +47,7 @@ const Portfolio = () => {
           <PortfolioCard
             id="5"
             image="./images/portfolio/work_1.jpg"
-            fullImage="img/Portfolio/work_1_full.jpg"
+            fullImage="./images/portfolio/work_1_full.jpg"
             alt="Project Name"
             description="Краткое описание"
             name="Название проекта"
@@ -56,7 +56,7 @@ const Portfolio = () => {
           <PortfolioCard
             id="6"
             image="./images/portfolio/work_1.jpg"
-            fullImage="img/Portfolio/work_1_full.jpg"
+            fullImage="./images/portfolio/work_1_full.jpg"
             alt="Project Name"
             description="Краткое описание"
             name="Название проекта"

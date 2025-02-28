@@ -1,5 +1,8 @@
-import { useAppDispatch } from "../../store";
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../store";
 import { MODAL_TYPE, openModal } from "../../store/modal/slice";
+import PortfolioWorkModal from "../PortfolioWorkModal/PortfolioWorkModal";
+import "./PortfolioCard.scss";
 
 interface PortfolioCardProps {
   id: string;
@@ -18,10 +21,10 @@ const PortfolioCard = ({
   name,
   description,
 }: PortfolioCardProps) => {
-  const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    dispatch(openModal({ id: MODAL_TYPE.portfolio, workId: id }));
+    dispatch(openModal({id: MODAL_TYPE.portfolio, workId: fullImage, workLink: fullImage}))
     console.log(id);
   };
 

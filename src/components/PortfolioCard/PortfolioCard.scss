@@ -1,0 +1,7 @@
+@use './../../styles/mixins.scss' as mixins;
+
+.portfolio-item {
+    &:hover {
+        @include mixins.box-shadowing-basic;
+    }
+}

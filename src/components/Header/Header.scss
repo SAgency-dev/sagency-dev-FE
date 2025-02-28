@@ -127,6 +127,8 @@
     &:hover {
       @include mixins.gradient-button-hover;
       @include mixins.transition-hover-button;
+      @include mixins.box-shadowing-basic;
+
       color: #fff;
       background-color: #9247ff;
     }

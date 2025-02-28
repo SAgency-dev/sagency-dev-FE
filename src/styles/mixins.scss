@@ -19,3 +19,7 @@
 @mixin inline-padding {
     padding-inline: $inline-padding;
 }
+
+@mixin box-shadowing-basic {
+    box-shadow: 0 0 11px $modal-text-color;
+}

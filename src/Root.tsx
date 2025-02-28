@@ -13,7 +13,7 @@ const Root = () => {
     <StrictMode>
       <BrowserRouter basename="/sagency-dev-FE/">
         <Provider store={store}>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Routes>
             <Route path="/" element={<App />}>
               <Route index element={<HomePage />} />

@@ -18,4 +18,13 @@ html {
   &::-webkit-scrollbar-track {
     background: #1a1a1a;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
