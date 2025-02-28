@@ -1,43 +1,41 @@
-@use './../../styles/mixins.scss' as mixins;
+@use "./../../styles/mixins.scss" as mixins;
 
 .portfolio-grid {
-    @include mixins.inline-padding;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  @include mixins.inline-padding;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .portfolio__button {
-    display: flex;
-    justify-self: center;
-    cursor: pointer;
+  display: flex;
+  justify-self: center;
+  cursor: pointer;
 
-    margin-top: 25px;
-    margin-bottom: 0;
+  background: transparent; 
+  color: #fff; 
+  padding: 15px 30px; 
+  border-radius: 20px; 
+  border: 1px solid #2a2735; 
 
-    overflow: hidden;
-    transition: all 0.3s, box-shadow 0.3s;
+  margin-top: 25px;
+  margin-bottom: 0;
 
-    font-family: "Open-Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 5%;
-    color: white;
+  overflow: hidden;
+  transition: all 0.3s;
 
-    padding: 16px 30px;
-    align-self: center;
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 5%;
 
-    border: 1px solid rgba(42, 39, 53, 1);
-    border-radius: 20px;
-    background-color: inherit;
+  align-self: center;
 
-    &:hover {
-      @include mixins.gradient-button-hover;
-      @include mixins.box-shadowing-basic;
-    }
+  &:hover {
+    background: #2a2735;
+  }
 }
 
 .portfolio__wrapper {
-    display: block;
-    
+  display: block;
 }
