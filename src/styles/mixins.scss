@@ -21,5 +21,7 @@
 }
 
 @mixin box-shadowing-basic {
-    box-shadow: 0 0 11px $modal-text-color;
+    box-shadow: none;
+    // can be used in future
+     //0 0 11px $modal-text-color;
 }
