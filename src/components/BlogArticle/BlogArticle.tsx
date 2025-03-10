@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import DateBlock from "../shared/DateBlock/DateBlock";
 import ShareWithBlock from "../shared/ShareWithBlock/ShareWithBlock";
 import "./BlogArticle.scss";
-import { useEffect } from "react";
 
 type BlogArticleProps = {
   title?: string;
@@ -16,12 +14,11 @@ const BlogArticle = ({
   title,
   preview,
   images,
-  adImageLink,
   isMocked,
 }: BlogArticleProps) => {
   let hasImages = true;
   const normalizedImage: string =
-    "../public/images/blog/mockBlogArticleImage.png";
+    "../images/blog/mockBlogArticleImage.png";
 
   if (!images || !images?.length) {
     hasImages = false;

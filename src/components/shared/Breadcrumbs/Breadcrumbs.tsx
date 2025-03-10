@@ -1,8 +1,8 @@
-type BreadcrumbsProps = {
-    articleName? : string;
-}
+// type BreadcrumbsProps = {
+//     articleName? : string;
+// }
 
-const Breadcrumbs = ({articleName}: BreadcrumbsProps) => {
+const Breadcrumbs = () => {
   return (
     <div>Breadcrumbs</div>
   )

@@ -1,12 +1,9 @@
-import { useParams } from "react-router-dom";
 import BlogArticle from "../../components/BlogArticle/BlogArticle";
 import BlogSection from "../../components/BlogSection/BlogSection";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import "./BlogArticlePage.scss";
 
 const BlogArticlePage = () => {
-  const { slug } = useParams();
-
   return (
     <div className="blog-article-page blog-article-page__wrapper">
       <div className="blog-article-page__breadcrumbs">
