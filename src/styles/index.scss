@@ -5,6 +5,10 @@
 html {
   overflow-y: scroll;
 
+  p {
+    line-height: 150%;
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
     padding-block: 4px;

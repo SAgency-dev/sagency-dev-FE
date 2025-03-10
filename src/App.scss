@@ -6,6 +6,14 @@
   color: #fff;
   overflow: visible;
 
+  p {
+    line-height: 150%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 130%;
+  }
+
   &::before {
     content: "";
     position: fixed;

@@ -1,0 +1,20 @@
+@use "./../../styles/mixins.scss" as mixins;
+
+.blog-article-page {
+  @include mixins.page-padding;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  max-width: 100%;
+  
+
+  &__wrapper {
+    overflow-x: hidden;
+    margin-top: 20px;
+  }
+
+  &__article {
+    margin: 42px auto 0;
+  }
+}

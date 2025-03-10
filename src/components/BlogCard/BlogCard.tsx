@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import CalendarIcon from "../../assets/icons/CalendarIcon";
+import DateBlock from "../shared/DateBlock/DateBlock";
 import "./BlogCard.scss";
 
 interface BlogCardProps {
@@ -7,21 +7,29 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ slug }: BlogCardProps) => {
-    const location = useLocation();
+  const location = useLocation();
+  const isInBlogArticle =
+    location.pathname.includes("/blog") && !location.pathname.endsWith("blog"); // NOT ends with Blog
 
-    const navigateToBlogArticle = (slug: string) => {
-        if (location.pathname.includes('/blog')) {
-            
-            return slug;
-        }
-        return 'blog/' + slug;
+  const navigateToBlogArticle = (slug: string) => {
+    if (location.pathname.includes("/blog")) {
+      if (location.pathname.endsWith("blog")) {
+        return slug;
+      }
+      return `../${slug}`;
     }
+    return "blog/" + slug;
+  };
 
   return (
     <div className="blog-card">
-      <Link to={navigateToBlogArticle(slug ? slug : '101-blog-article')}>
+      <Link to={navigateToBlogArticle(slug ? slug : "101-blog-article")}>
         <img
-          src="images/blog/blog-case-1.jpg"
+          src={
+            isInBlogArticle
+              ? "../images/blog/blog-case-1.jpg"
+              : "images/blog/blog-case-1.jpg"
+          }
           alt="Название статьи"
           className="blog-card__image"
         />
@@ -34,13 +42,8 @@ const BlogCard = ({ slug }: BlogCardProps) => {
             интернет-магазина на WordPress.
           </p>
           <div className="blog-card__content--footer">
-            <div className="blog-card__content--footer--container">
-              <CalendarIcon />
-              <span className="blog-card__content--footer--date">12.02.2025</span>
-            </div>
-            <p className="blog-card__content--footer--link">
-              Читать далее
-            </p>
+            <DateBlock />
+            <p className="blog-card__content--footer--link">Читать далее</p>
           </div>
         </div>
       </Link>

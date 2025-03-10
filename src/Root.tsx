@@ -7,6 +7,7 @@ import BlogPage from "./pages/BlogPage/BlogPage";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { store } from "./store";
+import BlogArticlePage from "./pages/BlogArticlePage/BlogArticlePage";
 
 const Root = () => {
   return (
@@ -19,6 +20,7 @@ const Root = () => {
               <Route index element={<HomePage />} />
               <Route path="blog">
                 <Route index element={<BlogPage />} />
+                <Route path=":slug" element={<BlogArticlePage/>} />
               </Route>
             </Route>
             <Route path="*" element={<NotFoundPage />} />

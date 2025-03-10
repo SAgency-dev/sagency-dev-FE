@@ -1,0 +1,29 @@
+.share-with-block {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-inline: 15px;
+  height: 64px;
+  width: 300px;
+  border-radius: 15px;
+  background-color: #24222d;
+
+  &__text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 6px;
+  }
+
+  &__icon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+  }
+}

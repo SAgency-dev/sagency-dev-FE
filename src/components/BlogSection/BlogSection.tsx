@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import BlogCard from "../BlogCard/BlogCard";
 import "./BlogSection.scss";
 
-const BlogSection = () => {
+// this prop can be used into BlogArticlePage component,
+// where we should render BlogSection on the very ending of article
+type BlogSectionProps = {
+  title: string;
+};
+
+const BlogSection = ({ title }: BlogSectionProps) => {
   return (
     <section className="blog blog__wrapper">
-      <h2 className="blog__title">Блог</h2>
+      <h2 className="blog__title">{title}</h2>
       <p className="blog__subtitle">
         Створюємо стильні та функціональні сайти, які не лише привертають увагу
         клієнтів, але й покращують взаємодію з вашим брендом, підвищують довіру,
@@ -22,7 +28,7 @@ const BlogSection = () => {
         <div className="item">677</div>
         <div className="item">512</div> */}
       </div>
-      <Link to={'/blog'} className="blog__view-all">
+      <Link to={"/blog"} className="blog__view-all">
         Всі новини
       </Link>
     </section>

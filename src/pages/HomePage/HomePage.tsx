@@ -15,7 +15,7 @@ const HomePage = () => {
       <Services />
       <PromoBlock />
       <Portfolio />
-      <BlogSection />
+      <BlogSection title="Блог" />
       <Contacts />
     </div>
   );

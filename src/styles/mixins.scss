@@ -25,3 +25,8 @@
     // can be used in future
      //0 0 11px $modal-text-color;
 }
+
+@mixin page-padding {
+    padding-top: $header-height;
+    padding-inline: $inline-padding;
+}

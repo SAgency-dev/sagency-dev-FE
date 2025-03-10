@@ -1,0 +1,15 @@
+@use './../../../styles/vars.scss' as *;
+
+.date-block {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+
+    &__text {
+        color: $modal-text-color;
+        font-size: 14px;
+        line-height: 21px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+    }
+}
