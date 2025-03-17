@@ -10,17 +10,16 @@ import "./Benefits.scss";
 const Benefits = () => {
   return (
     <section className="benefits">
-      <div className="container">
-        <h2 className="benefits-title">
+        <h2 className="benefits__title">
           Чому ми зробимо <span>Ваш бізнес</span> успішним?
         </h2>
-        <p className="benefits-subtitle">
+        <p className="benefits__subtitle">
           Створюємо стильні та функціональні сайти, які не лише привертають
           увагу клієнтів, але й покращують взаємодію з вашим брендом, підвищують
           довіру, допомагають виділитися серед конкурентів та збільшують ваші
           продажі.
         </p>
-        <div className="benefits-cards">
+        <div className="benefits__cards">
           <BenefitsCard
             icon={<PenIcon />}
             title="Дизайн"
@@ -60,7 +59,6 @@ const Benefits = () => {
               бізнесу."
               />
         </div>
-      </div>
     </section>
   );
 };

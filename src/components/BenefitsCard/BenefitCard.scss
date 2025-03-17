@@ -3,3 +3,85 @@
         margin-bottom: 12px;
     }
 }
+
+
+.benefits-card {
+    padding: 40px; /* Внутренние отступы */
+    text-align: left; /* Выравнивание текста заголовка и подзаголовка влево */
+    transition: transform 0.3s, box-shadow 0.3s; /* Анимация для улучшения UX */
+    width: auto; /* Указанный размер карточки */
+    height: auto; /* Автоматическая высота */
+    background: transparent; /* Прозрачный фон */
+    position: relative; /* Для корректного наложения градиента */
+    border-radius: 20px; /* Радиус углов обводки */
+    overflow: hidden; /* Скрываем части, выходящие за пределы */
+    border: 1px solid #3a3742; /* Стандартная обводка */
+    z-index: 0; /* Базовый слой */
+  }
+  
+  .benefits-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px; /* Радиус углов обводки */
+    padding: 2px; /* Толщина градиентной обводки */
+    background: linear-gradient(90deg, #6819e8 0%, #dc3545 100%); /* Градиент */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude; /* Убираем внутреннюю часть */
+    -webkit-mask-composite: destination-out; /* Для Safari */
+    z-index: -1; /* Псевдоэлемент за карточкой */
+    opacity: 0; /* По умолчанию градиент невидим */
+    transition: opacity 0s ease-in-out; /* Плавный переход для обводки */
+  }
+  
+  .benefits-card:hover::before {
+    opacity: 1; /* Показываем стрелку при наведении */
+    transition: opacity 0.3s ease-in-out; /* Плавный переход только для появления */
+  }
+  
+  .benefits-card:hover {
+    transform: translateY(-5px); /* Поднимаем карточку при наведении */
+    border-color: transparent; /* Делаем стандартную обводку невидимой */
+    z-index: 1; /* Выводим карточку поверх остальных */
+  }
+  
+  .benefits-card:not(:hover) {
+    border-color: #3a3742; /* Возвращаем стандартную обводку после наведения */
+  }
+  
+  .benefits-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #dc3545;
+  }
+  
+  .benefits-card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 30 0 18px;
+    color: #fff; /* Цвет заголовка */
+    position: relative; /* Для корректного отображения поверх градиента */
+    z-index: 2; /* Располагаем поверх */
+  }
+  
+  .benefits-card p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    color: #7f7d85; /* Цвет подзаголовка */
+    line-height: 1.5; /* Межстрочный интервал */
+    position: relative; /* Для корректного отображения поверх градиента */
+    z-index: 2; /* Располагаем поверх */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+  }
+  
+  .benefits-card:hover p {
+    color: #ffffff; /* Новый цвет текста при наведении */
+    transition: color 0.1s ease; /* Плавный переход цвета */
+  }

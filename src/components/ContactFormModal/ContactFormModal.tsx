@@ -1,21 +1,27 @@
+import { useRef } from "react";
 import CloseButton from "../../assets/icons/CloseButton";
 import FacebookIcon from "../../assets/icons/FacebookIcon";
 import InstagramIcon from "../../assets/icons/InstagramIcon";
 import TelegramIcon from "../../assets/icons/TelegramIcon";
 import ViberIcon from "../../assets/icons/ViberIcon";
+import { useOutsideClick } from "../../helpers/hooks";
 import { useAppDispatch } from "../../store";
 import { closeDialog, DIALOG_TYPE } from "../../store/dialog/slice";
 import "./ContactFormModal.scss";
 
 const ContactFormModal = () => {
   const dispatch = useAppDispatch();
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleCloseModal = () => {
     dispatch(closeDialog({ id: DIALOG_TYPE.feedback }));
   };
 
+  // if ESC pressed || click outside a Modal, we should close it
+  useOutsideClick(modalRef, handleCloseModal);
+
   return (
-    <div className="modal__wrapper">
+    <div className="modal__wrapper" ref={modalRef}>
       <CloseButton handleClose={handleCloseModal} />
       <h1 className="modal__header">Готові до співпраці?</h1>
       <p className="modal__text">
