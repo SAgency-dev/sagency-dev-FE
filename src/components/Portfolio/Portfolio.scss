@@ -6,6 +6,11 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+// for prevent random outside click on portfolio card
+.active-modal .portfolio-grid {
+    pointer-events: none;
+}
+
 .portfolio__button {
   display: flex;
   justify-self: center;

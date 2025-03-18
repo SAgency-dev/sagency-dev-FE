@@ -18,6 +18,16 @@
 
   padding: 18px;
   padding-top: 60px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+
+    & .contacts-card__button {
+        @include mixins.gradient-link-hover;
+    }
+  }
 
   &::before {
     position: absolute;
@@ -74,14 +84,13 @@
     opacity: 1;
 
     background: transparent;
+    background-color: #2a2735;
     color: #fff;
+
     padding: 15px 30px;
     border-radius: 20px;
     border: 1px solid #2a2735;
 
-    background-color: #2A2735;
-
-    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -94,13 +103,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: linear-gradient(
-        90deg,
-        #6819e8 0%,
-        #6f42c1 37%,
-        #d63384 71%,
-        #dc3545 100%
-      );
+      @include mixins.gradient-link-hover;
     }
   }
 }

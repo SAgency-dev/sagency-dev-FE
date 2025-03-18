@@ -39,24 +39,6 @@ export const useBreakpoint = () => {
   return { screenWidth, breakpoint };
 };
 
-export const useOutsideClick = (
-  ref: RefObject<HTMLDivElement>,
-  callback: () => void
-) => {
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        callback();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [callback, ref]);
-};
-
 const useScrollShadows = (ref: RefObject<HTMLElement>) => {
   const [showBefore, setShowBefore] = useState(false);
   const [showAfter, setShowAfter] = useState(true);

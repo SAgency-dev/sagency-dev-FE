@@ -1,4 +1,5 @@
 @use "./../../styles/vars.scss" as *;
+@use "./../../styles/mixins.scss" as mixins;
 
 a {
   text-decoration: none;
@@ -23,7 +24,13 @@ a {
 
   &:hover {
     transform: scale(1.03);
-    // box-shadow: 0 0 11px $modal-text-color; 
+
+    .blog-card__content--footer--link,
+    .blog-card__content--title {
+        @include mixins.gradient-button-hover;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
   }
 
   &__image {
@@ -57,7 +64,7 @@ a {
 
     &--footer {
       margin-top: 30px;
-    //   margin-bottom: 20px;
+      //   margin-bottom: 20px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -86,14 +93,14 @@ a {
 }
 
 .item {
-    display: block;
-    height: 320px;
-    width: 400px;
-    border: 1px solid green;
-    background-color: red;
+  display: block;
+  height: 320px;
+  width: 400px;
+  border: 1px solid green;
+  background-color: red;
 
-    &:hover {
-        cursor: pointer;
-        transform: translateY(-20px);
-    }
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-20px);
+  }
 }

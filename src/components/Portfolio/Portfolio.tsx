@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import "./Portfolio.scss";
 import PortfolioCard from "../PortfolioCard/PortfolioCard";
+import "./Portfolio.scss";
 
 const Portfolio = () => {
+
   return (
     <section className="portfolio">
       <div className="portfolio__wrapper">

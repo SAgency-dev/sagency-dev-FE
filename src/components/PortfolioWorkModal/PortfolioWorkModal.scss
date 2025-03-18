@@ -1,40 +1,43 @@
 .popup {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
 
-    // max-width: 90vw;
-    // margin: 0 auto;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    overflow-y: auto;
-    overflow-x: hidden; 
+//   width: 80vw;
+margin-inline: 10vw;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-    &__close {
-        position: fixed;
-        top: 20px;
-        right: 50px;
-        font-size: 24px;
-        color: #fff;
-        cursor: pointer;
-        
-      }
-
-      &::-webkit-scrollbar {
-        width: 8px;
-        padding-block: 4px;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background-color: #454545;
-        border-radius: 10px;
-      }
-    
-      &::-webkit-scrollbar-track {
-        background: #1a1a1a;
-      }
+  &__content {
+    position: relative;
   }
-  
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    padding-block: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #454545;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+}
