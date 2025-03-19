@@ -30,7 +30,6 @@ export const useOutsideClick = (
 // to hide Header when Footer is shown
 export const useHideFooter = () => {
     const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
-    const opacityPercent = 1;
 
     useEffect(() => {
       const handleScroll = () => {

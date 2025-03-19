@@ -1,12 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import LogoRounded from "../../assets/icons/LogoHeader";
-import { Select } from "../shared/ui/Select/Select";
-import "./Footer.scss";
-import { openDialog, DIALOG_TYPE } from "../../store/dialog/slice";
-import { useAppDispatch } from "../../store";
-import ViberRoundIcon from "../../assets/icons/ViberRoundIcon";
 import TelegramRoundIcon from "../../assets/icons/TelegramRoundIcon";
+import ViberRoundIcon from "../../assets/icons/ViberRoundIcon";
 import WhatsAppIcon from "../../assets/icons/WhatsAppIcon";
+import { useAppDispatch } from "../../store";
+import { DIALOG_TYPE, openDialog } from "../../store/dialog/slice";
+import "./Footer.scss";
 
 const Footer = () => {
   const dispatch = useAppDispatch();
