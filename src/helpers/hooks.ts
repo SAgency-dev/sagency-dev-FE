@@ -55,7 +55,7 @@ export const useDisabledPageScroll = () => {
   useEffect(() => {
     const disableScroll = (e: Event) => e.preventDefault();
     document.body.addEventListener("wheel", disableScroll, { passive: false });
-
+    
     return () => {
       document.body.removeEventListener("wheel", disableScroll);
     };
