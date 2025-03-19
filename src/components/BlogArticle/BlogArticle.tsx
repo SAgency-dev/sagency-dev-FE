@@ -23,19 +23,6 @@ const BlogArticle = ({
   if (!images || !images?.length) {
     hasImages = false;
   }
-
-  //to scrollable sub-headers from article nav
-  //   useEffect(() => {
-  //     if (location.hash) {
-  //       const subHeader = document.getElementById(location.hash.slice(1));
-
-  //       if (subHeader) {
-  //         subHeader.scrollIntoView({ behavior: "smooth" });
-  //       }
-  //     }
-  //   }, [location.hash]);
-
-  // here we'll include page-header-height (80px by default)
   const scrollToSection = (sectionName: string) => {
     const section = document.getElementById(sectionName);
     const headerHeight = 80;

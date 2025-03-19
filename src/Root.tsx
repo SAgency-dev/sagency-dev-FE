@@ -3,11 +3,12 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
+import BlogArticlePage from "./pages/BlogArticlePage/BlogArticlePage";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import HomePage from "./pages/HomePage/HomePage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { store } from "./store";
-import BlogArticlePage from "./pages/BlogArticlePage/BlogArticlePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import RealNotFoundPage from "./pages/NotFoundPage/RealNotFoundPage";
 
 const Root = () => {
   return (
@@ -20,10 +21,11 @@ const Root = () => {
               <Route index element={<HomePage />} />
               <Route path="blog">
                 <Route index element={<BlogPage />} />
-                <Route path=":slug" element={<BlogArticlePage/>} />
+                <Route path=":slug" element={<BlogArticlePage />} />
               </Route>
+              <Route path="*" element={<NotFoundPage />} />
+              <Route path="404" element={<RealNotFoundPage />} />
             </Route>
-            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Provider>
       </BrowserRouter>

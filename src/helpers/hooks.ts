@@ -29,26 +29,24 @@ export const useOutsideClick = (
 
 // to hide Header when Footer is shown
 export const useHideFooter = () => {
-    const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
+  const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      const footerHeight = 112; // should be updated to dynamical $footer-height
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const footerHeight = 112;
-        const scrollTop = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
+      if (scrollTop + windowHeight >= documentHeight - footerHeight) {
+        setIsHeaderVisible(false);
+      } else {
+        setIsHeaderVisible(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
 
-        if (scrollTop + windowHeight >= documentHeight - footerHeight) {
-          setIsHeaderVisible(false);
-        } else {
-          setIsHeaderVisible(true);
-        }
-      };
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-      window.addEventListener("scroll", handleScroll);
-
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    return isHeaderVisible;
-  };
+  return isHeaderVisible;
+};

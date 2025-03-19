@@ -1,0 +1,6 @@
+@use './../../styles/vars.scss' as *;
+
+.not-found-layout {
+    min-height: 100vh;
+    background-color: $header-bgc;
+}

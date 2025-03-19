@@ -1,0 +1,71 @@
+@use "./../../styles/vars.scss" as *;
+@use "./../../styles/mixins.scss" as mixins;
+
+.not-found {
+  @include mixins.page-padding;
+  height: calc(100vh - $footer-height);
+  background-color: $header-bgc;
+
+  padding: 20px;
+  color: #fff;
+
+  position: relative;
+
+  &__content {
+    position: absolute;
+    left: 50%;
+    bottom: calc(50% - ($footer-height / 2));
+    transform: translate(-50%, 50%);
+
+    display: block;
+    text-align: center;
+    height: 370px;
+    width: 550px;
+    background-color: inherit;
+
+    font-family: "Montserrat", sans-serif;
+
+    &--title {
+      margin-top: 16px;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    &--text {
+        margin-top: 8px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0;
+
+        white-space: nowrap;
+    }
+
+    &--button {
+        margin-top: 14px;
+        display: flex;
+        height: 54px;
+        border-radius: 20px;
+        border: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 14px auto 0;
+        padding-inline: 58px;
+        max-width: fit-content;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 5%;
+        color: #fff;
+
+        cursor: pointer;
+
+        @include mixins.gradient-button-hover;
+    }
+  }
+}
