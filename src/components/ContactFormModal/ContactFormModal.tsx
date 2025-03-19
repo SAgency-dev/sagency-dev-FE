@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import CloseButton from "../../assets/icons/CloseButton";
 import FacebookIcon from "../../assets/icons/FacebookIcon";
 import InstagramIcon from "../../assets/icons/InstagramIcon";
 import TelegramIcon from "../../assets/icons/TelegramIcon";
 import ViberIcon from "../../assets/icons/ViberIcon";
-import { useOutsideClick } from "../../helpers/hooks";
+import { useDisabledPageScroll, useHideHeader, useOutsideClick } from "../../helpers/hooks";
 import { useAppDispatch } from "../../store";
 import { closeDialog, DIALOG_TYPE } from "../../store/dialog/slice";
 import "./ContactFormModal.scss";
@@ -19,22 +19,8 @@ const ContactFormModal = () => {
 
   // if ESC pressed || click outside a Modal, we should close it
   useOutsideClick(modalRef, handleCloseModal);
-
-  const savedScrollY = useRef(window.scrollY);
-
-  useEffect(() => {
-    window.scrollTo({
-        top: savedScrollY.current,
-        left: 0,
-        behavior: "instant",
-      });
-    return () =>
-      window.scrollTo({
-        top: savedScrollY.current,
-        left: 0,
-        behavior: "instant",
-      });
-  }, []);
+  useDisabledPageScroll();
+  useHideHeader();
 
   return (
     <div className="modal__wrapper" ref={modalRef}>

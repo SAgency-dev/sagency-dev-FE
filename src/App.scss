@@ -31,23 +31,8 @@
     visibility: visible;
     opacity: 1;
   }
-
-  &.active-modal {
-    overflow: hidden;
-    // position: fixed;
-    width: 100%;
-    scroll-behavior: auto;
-    scrollbar-gutter: stable;
-    pointer-events: none;
-  }
 }
 
-html :has(.active-modal) {
-    overflow: hidden;
-    // position: fixed;
-    width: 100%;
-    scroll-behavior: auto;
-}
 /* Используем Open Sans для подзаголовков */
 h2,
 h3,

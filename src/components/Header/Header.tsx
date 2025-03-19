@@ -4,12 +4,12 @@ import { useAppDispatch } from "../../store";
 import { DIALOG_TYPE, openDialog } from "../../store/dialog/slice";
 import { Select } from "../shared/ui/Select/Select";
 import "./Header.scss";
-import { useHideFooter } from "../../helpers/hooks";
+import { useHideHeader } from "../../helpers/hooks";
 import classNames from "classnames";
 
 const Header = () => {
   const dispatch = useAppDispatch();
-  const isHeaderVisible = useHideFooter();
+  const isHeaderVisible = useHideHeader();
 
   const handlePriceButtonClick = () => {
     dispatch(openDialog({ id: DIALOG_TYPE.feedback }));

@@ -28,7 +28,7 @@ export const useOutsideClick = (
 };
 
 // to hide Header when Footer is shown
-export const useHideFooter = () => {
+export const useHideHeader = () => {
   const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
   useEffect(() => {
     const handleScroll = () => {
@@ -49,4 +49,15 @@ export const useHideFooter = () => {
   }, []);
 
   return isHeaderVisible;
+};
+
+export const useDisabledPageScroll = () => {
+  useEffect(() => {
+    const disableScroll = (e: Event) => e.preventDefault();
+    document.body.addEventListener("wheel", disableScroll, { passive: false });
+
+    return () => {
+      document.body.removeEventListener("wheel", disableScroll);
+    };
+  }, []);
 };
