@@ -17,7 +17,7 @@ const ContactsCard: React.FC<ContactCardProps> = ({
         <span className="contacts-card__top-content--title">{title}</span>
       </div>
       <button type="button" className="contacts-card__button">
-        Написати
+        Написати    
       </button>
     </div>
   );

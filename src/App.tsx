@@ -7,8 +7,8 @@ import { DIALOG_TYPE } from "./store/dialog/slice";
 import classNames from "classnames";
 import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
 import Footer from "./components/Footer/Footer";
-import { closeModal, MODAL_TYPE } from "./store/modal/slice";
 import PortfolioWorkModal from "./components/PortfolioWorkModal/PortfolioWorkModal";
+import { closeModal, MODAL_TYPE } from "./store/modal/slice";
 
 function App() {
   const isDialogOpened = useAppSelector(

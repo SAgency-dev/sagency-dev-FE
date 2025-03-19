@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from "react";
+import { RefObject, useEffect, useState } from "react";
 
 export const useOutsideClick = (
   ref: RefObject<HTMLDivElement>,
@@ -26,3 +26,30 @@ export const useOutsideClick = (
     };
   }, [callback, ref]);
 };
+
+// to hide Header when Footer is shown
+export const useHideFooter = () => {
+    const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
+    const opacityPercent = 1;
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const footerHeight = 112;
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        if (scrollTop + windowHeight >= documentHeight - footerHeight) {
+          setIsHeaderVisible(false);
+        } else {
+          setIsHeaderVisible(true);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return isHeaderVisible;
+  };

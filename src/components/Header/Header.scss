@@ -8,7 +8,11 @@
   width: 100%;
   background-color: #{$header-bgc};
   z-index: 1000;
-  transition: border-bottom 0.3s ease;
+  
+  opacity: 1;
+  transition: border-bottom 0.3s ease, opacity 0.5s ease;
+  will-change: opacity;
+
 
   border-bottom: 1px solid $header-select-bgc;
 
@@ -16,6 +20,11 @@
     background: #{$header-bgc-scrolled};
     background-clip: padding-box;
     border-bottom: 1px solid rgba(255, 255, 255, 1);
+  }
+
+  &.opaque {
+    opacity: 0;
+    pointer-events: none;
   }
 
   &__container {

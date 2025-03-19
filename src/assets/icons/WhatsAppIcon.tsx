@@ -1,8 +1,12 @@
-const WhatsAppIcon = () => {
+type WhatsAppIconProps = {
+    height?: number;
+}
+
+const WhatsAppIcon = ({height = 50}: WhatsAppIconProps) => {
   return (
     <svg
-      width="50"
-      height="50"
+      width={height}
+      height={height}
       viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

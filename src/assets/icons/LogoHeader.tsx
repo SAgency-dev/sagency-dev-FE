@@ -1,4 +1,4 @@
-const LogoHeader = () => {
+const LogoRounded = () => {
   return (
     <svg
       width="50"
@@ -16,4 +16,4 @@ const LogoHeader = () => {
   );
 };
 
-export default LogoHeader;
+export default LogoRounded;

@@ -1,19 +1,90 @@
-@use './../../styles/vars.scss' as *;
+@use "./../../styles/vars.scss" as *;
+@use "./../../styles/mixins.scss" as mixins;
 
 .footer {
   display: flex;
-  min-height: 286px;
+  justify-content: space-between;
+  min-height: 112px;
 
-  justify-content: center;
-  align-items: center;
-
-  //temp styles for mocked text
   font-family: "Montserrat", sans-serif;
-  font-size: 75px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
   color: white;
 
   border-top: 1px solid $header-select-bgc;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    padding-inline: 40px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &--info {
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & span:first-of-type {
+        cursor: pointer;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    &--icons {
+      display: flex;
+      gap: 8px;
+
+      & :nth-child(n) {
+        cursor: pointer;
+      }
+    }
+
+    &--cta-button {
+      display: inline-block;
+      width: 198px;
+      height: #{$header-button-height};
+      line-height: #{$header-button-height};
+      text-align: center;
+      letter-spacing: 0.04em;
+      font-size: 16px;
+      font-weight: 400;
+      color: #18161f;
+      background-color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0;
+
+      &:hover {
+        @include mixins.gradient-button-hover;
+        @include mixins.transition-hover-button;
+        @include mixins.box-shadowing-basic;
+
+        color: #fff;
+        background-color: #9247ff;
+      }
+    }
+  }
 }
