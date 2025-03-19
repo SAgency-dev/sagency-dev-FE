@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import CloseButton from "../../assets/icons/CloseButton";
 import FacebookIcon from "../../assets/icons/FacebookIcon";
 import InstagramIcon from "../../assets/icons/InstagramIcon";
@@ -19,6 +19,22 @@ const ContactFormModal = () => {
 
   // if ESC pressed || click outside a Modal, we should close it
   useOutsideClick(modalRef, handleCloseModal);
+
+  const savedScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+    window.scrollTo({
+        top: savedScrollY.current,
+        left: 0,
+        behavior: "instant",
+      });
+    return () =>
+      window.scrollTo({
+        top: savedScrollY.current,
+        left: 0,
+        behavior: "instant",
+      });
+  }, []);
 
   return (
     <div className="modal__wrapper" ref={modalRef}>
