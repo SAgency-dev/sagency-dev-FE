@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import { useAppDispatch, useAppSelector } from "./store";
@@ -25,10 +25,10 @@ function App() {
   );
 
   const dispatch = useAppDispatch();
-  const location = useLocation();
+//   const location = useLocation();
 
-  const hideHeaderOnPages = ["/404"];
-  const isHeaderVisible = !hideHeaderOnPages.includes(location.pathname);
+//   const hideHeaderOnPages = ["/404"];
+//   const isHeaderVisible = !hideHeaderOnPages.includes(location.pathname);
 
   return (
     <div
@@ -37,7 +37,7 @@ function App() {
         isDialogOpened || isModalOpened ? "active-modal" : ""
       )}
     >
-      {isHeaderVisible && <Header />}
+      <Header />
       <main>
         <Outlet />
       </main>
