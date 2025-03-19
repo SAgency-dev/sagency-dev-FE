@@ -45,7 +45,9 @@ export const useHideHeader = () => {
     };
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return isHeaderVisible;
@@ -55,9 +57,21 @@ export const useDisabledPageScroll = () => {
   useEffect(() => {
     const disableScroll = (e: Event) => e.preventDefault();
     document.body.addEventListener("wheel", disableScroll, { passive: false });
-    
+    const disableArrows = (e: KeyboardEvent) => {
+      if (
+        e.key === "ArrowDown" ||
+        e.key === "ArrowUp" ||
+        e.key === "PageUp" ||
+        e.key === "PageDown"
+      ) {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener("keydown", disableArrows);
+
     return () => {
       document.body.removeEventListener("wheel", disableScroll);
+      window.removeEventListener("keydown", disableArrows);
     };
   }, []);
 };
