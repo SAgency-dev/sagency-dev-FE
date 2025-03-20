@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useOutsideClick } from "../../helpers/hooks";
+import { useDisabledPageScroll, useOutsideClick } from "../../helpers/hooks";
 import { useAppDispatch } from "../../store";
 import { closeModal, MODAL_TYPE } from "../../store/modal/slice";
 import "./PortfolioWorkModal.scss";
@@ -12,6 +12,7 @@ interface PortfolioWorkModalProps {
 
 const PortfolioWorkModal = ({ workLink }: PortfolioWorkModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  useDisabledPageScroll();
 
   const dispatch = useAppDispatch();
 

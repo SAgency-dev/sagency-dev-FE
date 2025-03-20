@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const useOutsideClick = (
   ref: RefObject<HTMLDivElement>,
@@ -7,7 +8,7 @@ export const useOutsideClick = (
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        event.preventDefault()
+        event.preventDefault();
         callback();
       }
     };
@@ -31,12 +32,20 @@ export const useOutsideClick = (
 // to hide Header when Footer is shown
 export const useHideHeader = () => {
   const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
+  const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       const footerHeight = 112; // should be updated to dynamical $footer-height
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
+
+      // check, if documentHeight = viewport height
+      if (document.body.clientHeight === documentHeight) {
+        setIsHeaderVisible(true);
+        return;
+      }
 
       if (scrollTop + windowHeight >= documentHeight - footerHeight) {
         setIsHeaderVisible(false);
@@ -49,7 +58,7 @@ export const useHideHeader = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location.pathname]);
 
   return isHeaderVisible;
 };

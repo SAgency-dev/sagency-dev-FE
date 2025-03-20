@@ -7,7 +7,7 @@ const Portfolio = () => {
   return (
     <section className="portfolio">
       <div className="portfolio__wrapper">
-        <h2 className="benefits-title">Портфоліо</h2>
+        <h2 className="portfolio__title">Портфоліо</h2>
         <div className="portfolio-grid">
           <PortfolioCard
             id="1"
