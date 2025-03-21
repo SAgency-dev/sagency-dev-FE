@@ -7,7 +7,7 @@ const BlogArticlePage = () => {
   return (
     <div className="blog-article-page blog-article-page__wrapper">
       <div className="blog-article-page__breadcrumbs">
-        <Breadcrumbs />
+        <Breadcrumbs articleName="Манчестер Сити – Ливерпуль: прогноз, коэффициенты и неожиданный анализ!" />
       </div>
       <div className="blog-article-page__article">
         <BlogArticle

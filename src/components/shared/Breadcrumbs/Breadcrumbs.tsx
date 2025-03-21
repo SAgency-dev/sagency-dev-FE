@@ -13,8 +13,10 @@ const Breadcrumbs = ({ articleName }: BreadcrumbsProps) => {
   const [paths, setPaths] = useState<string[]>([]);
 
   useEffect(() => {
-    const rawCrumbs = location.pathname.split("/").filter((el) => el.length > 0);
-    const withRoot = ["/", ...rawCrumbs]; 
+    const rawCrumbs = location.pathname
+      .split("/")
+      .filter((el) => el.length > 0);
+    const withRoot = ["/", ...rawCrumbs];
     const labelCrumbs: string[] = [];
 
     const builtPaths: string[] = [];
@@ -38,8 +40,9 @@ const Breadcrumbs = ({ articleName }: BreadcrumbsProps) => {
     });
 
     if (articleName) {
+      labelCrumbs.pop();
       labelCrumbs.push(articleName);
-      builtPaths.push(location.pathname); 
+      builtPaths.push(location.pathname);
     }
 
     setCrumbsToShow(labelCrumbs);
@@ -56,8 +59,10 @@ const Breadcrumbs = ({ articleName }: BreadcrumbsProps) => {
           </span>
         ) : (
           <span key={index} className="breadcrumbs__crumb">
-            <Link className="breadcrumbs__link" to={paths[index]}>{crumb}</Link>
-            <span className="breadcrumbs__divider">{" "} /</span>
+            <Link className="breadcrumbs__link" to={paths[index]}>
+              {crumb}
+            </Link>
+            <span className="breadcrumbs__divider"> /</span>
           </span>
         );
       })}
