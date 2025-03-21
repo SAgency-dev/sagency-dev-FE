@@ -1,9 +1,11 @@
 import BlogCard from "../../components/BlogCard/BlogCard";
+import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import "./BlogPage.scss";
 
 const BlogPage = () => {
   return (
     <div className="blog-page">
+        <Breadcrumbs />
       <div className="blog-page__top">
         <h1 className="blog-page__top--title">Блог</h1>
         <p className="blog-page__top--text">

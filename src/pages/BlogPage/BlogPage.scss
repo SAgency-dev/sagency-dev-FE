@@ -1,7 +1,7 @@
 @use './../../styles/mixins.scss' as mixins;
 
 .blog-page {
-    padding-top: 160px; // 80 + 80: padding from top of page (incl. header-height) to first row
+    padding-top: 80px; // 80 + 60: padding from top of page (incl. header-height) to first row
     padding-bottom: 40px;
     @include mixins.inline-padding;
     &__top {

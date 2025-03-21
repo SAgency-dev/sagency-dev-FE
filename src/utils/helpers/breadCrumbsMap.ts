@@ -1,8 +1,8 @@
-// export const breadCrumbsMap: Record<
-//   string,
-//   string | ((params: string) => string)
-// > = {
-//   "/": "Главная",
-//   "/blog": "Блог",
-//   "/blog/:slug": (params) => `${params => }`,
-// };
+export const breadCrumbsMap: Record<
+  string,
+  string 
+> = {
+  "/": "Главная",
+  "blog": "Блог",
+  "404": "Страница не найдена"
+};

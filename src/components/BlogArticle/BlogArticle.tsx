@@ -4,6 +4,7 @@ import "./BlogArticle.scss";
 
 type BlogArticleProps = {
   title?: string;
+  slug?: string;
   preview?: string;
   images?: string[];
   adImageLink?: string;
@@ -12,6 +13,7 @@ type BlogArticleProps = {
 
 const BlogArticle = ({
   title,
+  slug,
   preview,
   images,
   isMocked,
