@@ -13,7 +13,6 @@ type BlogArticleProps = {
 
 const BlogArticle = ({
   title,
-  slug,
   preview,
   images,
   isMocked,
