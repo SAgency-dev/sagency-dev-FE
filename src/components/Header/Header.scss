@@ -1,23 +1,25 @@
 @use "./../../styles/mixins.scss" as mixins;
 @use "./../../styles/vars.scss" as *;
+@use '/src/styles/themes.scss' as *;
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #{$header-bgc};
+  background-color: var(--header-bgc);
+  color: var(--header-text-color);
   z-index: 1000;
   
   opacity: 1;
-  transition: border-bottom 0.3s ease, opacity 0.5s ease;
+  transition: all 0.3s ease;
   will-change: opacity;
 
 
-  border-bottom: 1px solid $header-select-bgc;
+  border-bottom: 1px solid var(--header-select-bgc);
 
   &.scrolled {
-    background: #{$header-bgc-scrolled};
+    background: var(--header-bgc-scrolled);
     background-clip: padding-box;
     border-bottom: 1px solid rgba(255, 255, 255, 1);
   }
@@ -44,7 +46,6 @@
     height: auto;
     margin: 0;
 
-    display: inline-block;
     cursor: pointer;
   }
 
@@ -62,10 +63,8 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    height: #{$header-height};
-    line-height: #{$header-height};
-    color: #fff;
-    // transition: all 1s ease;
+    height: $header-height;
+    line-height: $header-height;
     @include mixins.transition-hover-link;
 
     &:hover {
@@ -125,8 +124,8 @@
     letter-spacing: 0.04em;
     font-size: 16px;
     font-weight: 400;
-    color: #18161f;
-    background-color: #fff;
+    color: var(--header-cta-button-color);
+    background-color: var(--header-cta-button-bgc);
     border: none;
     border-radius: 20px;
     cursor: pointer;

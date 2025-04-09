@@ -1,5 +1,6 @@
 @use "./../../../../styles/mixins.scss" as mixins;
 @use "./../../../../styles/vars.scss" as *;
+@use '/src/styles/themes.scss' as *;
 
 .custom-select {
   position: relative;
@@ -7,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #{$header-select-bgc};
+  background: var(--header-select-bgc);
   border-radius: 20px;
   height: #{$header-button-height};
   line-height: #{$header-button-height};

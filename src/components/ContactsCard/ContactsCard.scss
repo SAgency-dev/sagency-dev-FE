@@ -1,5 +1,6 @@
 @use "./../../styles/vars.scss" as *;
 @use "./../../styles/mixins.scss" as mixins;
+@use '/src/styles/themes.scss' as *;
 
 .contacts-card {
   display: flex;
@@ -69,7 +70,7 @@
       font-size: 22px;
       line-height: 1.2;
       letter-spacing: 0;
-      color: white;
+      color: var(--primary-color-section);
     }
   }
 
@@ -83,9 +84,8 @@
     cursor: pointer;
     opacity: 1;
 
-    background: transparent;
-    background-color: #2a2735;
-    color: #fff;
+    background-color: var(--primary-button-bgc);
+    color: var(--primary-button-text);
 
     padding: 15px 30px;
     border-radius: 20px;

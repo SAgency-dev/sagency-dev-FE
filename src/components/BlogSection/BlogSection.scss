@@ -1,14 +1,13 @@
 @use "./../../styles/vars.scss" as *;
 @use "./../../styles/mixins.scss" as mixins;
+@use '/src/styles/themes.scss' as *;
 
 .blog {
   display: flex;
   flex-direction: column;
-  background-color: $header-bgc;
-  margin-top: 80px;
-  padding-bottom: 80px;
-  background-color: rgba(24, 22, 30, 1); /* Тёмный фон */
-  color: #fff; /* Белый текст */
+  padding-block: 80px;
+  background-color: var(--header-bgc);
+  color: var(--primary-color-section); 
 
   @include mixins.inline-padding;
 
@@ -19,7 +18,7 @@
     line-height: 1.2;
     letter-spacing: 0;
     margin-bottom: 6px;
-    color: #fff; /* Белый текст */
+    color: var(--primary-app-color); 
     text-align: center; /* Выравнивание текста по центру */
   }
 
@@ -29,7 +28,7 @@
     font-weight: 400;
     line-height: 1.6;
     margin-bottom: 40px;
-    color: $modal-text-color; /* Полупрозрачный текст */
+    color: var(--primary-subtitle-section); /* Полупрозрачный текст */
     text-align: center; /* Выравнивание текста по центру */
   }
 
@@ -55,8 +54,8 @@
     line-height: 21px;
     letter-spacing: 5%;
 
-    background: transparent;
-    color: #fff;
+    background: var(--primary-button-bgc);
+    color: var(--primary-button-text);
     padding: 15px 30px;
     border-radius: 20px;
     border: 1px solid #2a2735;
@@ -67,7 +66,7 @@
     transition: all 0.3s ease-in;
 
     &:hover {
-        background: #2a2735;
+        background: var(--primary-button-hover);
     }
   }
 }

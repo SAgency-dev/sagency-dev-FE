@@ -1,10 +1,11 @@
 @use "./../../styles/vars.scss" as *;
 @use "./../../styles/mixins.scss" as mixins;
+@use '/src/styles/themes.scss' as *;
 
 .contacts {
   padding-block: 60px;
-  background-color: $primary-gray;
-
+  background-color: var(--primary-bgc-section);
+  color: var(--primary-color-section);
   @include mixins.inline-padding;
 
   display: flex;
@@ -27,14 +28,13 @@
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: 0;
-    color: $modal-text-color;
+    color: var(--primary-subtitle-section);
 
     margin-bottom: 40px;
   }
 
   &__grid {
     display: grid;
-    // width: 100%;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
   }

@@ -1,5 +1,6 @@
 @use "./../../styles/vars.scss" as *;
 @use "./../../styles/mixins.scss" as mixins;
+@use '/src/styles/themes.scss' as *;
 
 a {
   text-decoration: none;
@@ -9,10 +10,11 @@ a {
 }
 
 .blog-card {
-  background-color: $primary-gray;
+  background-color: var(--card-background);
   position: relative;
   min-height: 430px;
   cursor: pointer;
+  border: 1px solid $primary-bgc-dark;
 
   display: flex;
   flex-direction: column;
@@ -42,6 +44,7 @@ a {
     position: relative;
     padding: 28px 20px 20px;
     font-family: "Montserrat", sans-serif;
+    color: var(--primary-color-section);
 
     &--title {
       font-size: 18px;
@@ -59,7 +62,7 @@ a {
       font-size: 14px;
       line-height: 21px;
 
-      color: rgba(255, 255, 255, 1);
+      color: var(--primary-color-section);
     }
 
     &--footer {

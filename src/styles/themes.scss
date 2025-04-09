@@ -1,0 +1,53 @@
+@use "./vars.scss" as *;
+@use "./mixins.scss" as mixins;
+
+:root {
+  --header-bgc: #{$header-bgc};
+  --header-bgc-light: #{$header-bgc-light};
+  --header-text-color: #{$header-text-color};
+  --card-background: #{$primary-gray};
+  --header-bgc-scrolled: #{$header-bgc-scrolled};
+  --header-select-bgc: #{$header-select-bgc};
+  --header-cta-button-bgc: #{$primary-white};
+  --header-cta-button-color: #{$cta-button-color};
+  --primary-button-text: #{$primary-white};
+  --primary-button-bgc: transparent;
+  --primary-button-hover: #{$secondary-gray};
+
+  --primary-app-bgc: #{$primary-bgc-dark};
+  --primary-bgc-section: #{$primary-bgc-dark};
+  --primary-color-section: #{$primary-white};
+  --primary-subtitle-section: #{$primary-subtitle};
+}
+
+.light-theme {
+  --card-background: #{$primary-white};
+  --header-bgc: #{$header-bgc-light};
+  --header-text-color: #{$header-text-color};
+  --header-select-bgc: #{$select-background-dark};
+  --header-cta-button-bgc: #{$cta-button-color};
+  --header-cta-button-color: #{$primary-white};
+  --primary-button-text: #{$primary-black};
+  --primary-button-bgc: #{$primary-white};
+  --primary-button-hover: #{$primary-light-hover};
+
+  --primary-app-bgc: #{$primary-light};
+  --primary-app-color: #{$primary-bgc-dark};
+  --primary-bgc-section: #{$primary-white};
+  --primary-color-section: #{$primary-bgc-dark};
+  --primary-subtitle-section: #{$secondary-gray};
+}
+
+.dark-theme {
+  --card-background: #{$primary-gray};
+  --header-bgc: #{$header-bgc};
+  --header-text-color: #{$header-bgc-light};
+  --primary-button-text: #{$primary-white};
+  --primary-button-bgc: transparent;
+  --primary-button-hover: #{$secondary-gray};
+
+  --primary-app-bgc: #{$primary-bgc-dark};
+  --primary-bgc-section: #{$primary-bgc-dark};
+  --primary-app-color: #{$primary-white};
+  --primary-subtitle-section: #{$primary-subtitle};
+}

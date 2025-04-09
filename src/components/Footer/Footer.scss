@@ -1,5 +1,6 @@
 @use "./../../styles/vars.scss" as *;
 @use "./../../styles/mixins.scss" as mixins;
+@use '/src/styles/themes.scss' as *;
 
 .footer {
   display: flex;
@@ -11,7 +12,8 @@
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
-  color: white;
+  color: var(--header-text-color);
+  background-color: var(--header-bgc);
 
   border-top: 1px solid $header-select-bgc;
 
@@ -70,8 +72,8 @@
       letter-spacing: 0.04em;
       font-size: 16px;
       font-weight: 400;
-      color: #18161f;
-      background-color: #fff;
+      color: var(--header-cta-button-color);
+      background-color: var(--header-cta-button-bgc);
       border: none;
       border-radius: 20px;
       cursor: pointer;
@@ -83,7 +85,7 @@
         @include mixins.transition-hover-button;
         @include mixins.box-shadowing-basic;
 
-        color: #fff;
+        color: var(--primary-button-hover);
         background-color: #9247ff;
       }
     }

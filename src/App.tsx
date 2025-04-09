@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./App.scss";
+import './styles/themes.scss';
 import Header from "./components/Header/Header";
 import { useAppDispatch, useAppSelector } from "./store";
 import { DIALOG_TYPE } from "./store/dialog/slice";
@@ -9,6 +10,9 @@ import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
 import Footer from "./components/Footer/Footer";
 import PortfolioWorkModal from "./components/PortfolioWorkModal/PortfolioWorkModal";
 import { closeModal, MODAL_TYPE } from "./store/modal/slice";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "./helpers/theme/ThemeContext";
+import { Theme } from "./utils/types";
 
 function App() {
   const isDialogOpened = useAppSelector(
@@ -25,16 +29,18 @@ function App() {
   );
 
   const dispatch = useAppDispatch();
-//   const location = useLocation();
+  const { theme } = useContext(ThemeContext);
 
-//   const hideHeaderOnPages = ["/404"];
-//   const isHeaderVisible = !hideHeaderOnPages.includes(location.pathname);
+  useEffect(() => {
+    document.body.classList.toggle("light-theme", theme === Theme.LIGHT);
+    document.body.classList.toggle("dark-theme", theme === Theme.DARK);
+  }, [theme]);
 
   return (
     <div
       className={classNames(
         "app__wrapper",
-        isDialogOpened || isModalOpened ? "active-modal" : ""
+        isDialogOpened || isModalOpened ? "active-modal" : "",
       )}
     >
       <Header />

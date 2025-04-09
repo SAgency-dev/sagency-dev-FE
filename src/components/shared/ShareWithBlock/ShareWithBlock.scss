@@ -1,3 +1,5 @@
+@use '/src/styles/themes.scss' as *;
+
 .share-with-block {
   display: flex;
   gap: 8px;
@@ -6,7 +8,8 @@
   height: 64px;
   width: 300px;
   border-radius: 15px;
-  background-color: #24222d;
+  background-color: var(--primary-bgc-section);
+  color: var(--primary-color-section);
 
   &__text {
     font-family: "Open Sans", sans-serif;

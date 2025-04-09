@@ -1,14 +1,26 @@
 $header-bgc: rgba(24, 22, 31, 1);
+$header-bgc-light: #f5f5f5;
+$header-text-color: #000;
 $header-bgc-scrolled: rgba(24, 22, 31, 0.9);
 $header-select-bgc: rgba(255, 255, 255, 0.1);
-$header-select-bgc-no-opacity: rgba(255, 255, 255, 0);
+$header-select-bgc-no-opacity: rgb(255, 255, 255, 0);
+$header-select-light-theme: rgba(0, 0, 0, 0.9);
 $header-button-height: 52px;
 $header-height: 80px;
 
 $footer-height: 112px;
 
+$primary-white: #fff;
+$primary-black: #000;
+$primary-bgc-dark: #18161f;
+$primary-light: #f5f5f5;
+$primary-light-hover: rgba(255, 255, 255, 0.7);
 $primary-gray: rgba(36, 34, 45, 1);
+$primary-subtitle: #7f7d85;
 $secondary-gray: rgba(42, 39, 53, 1);
+
+$select-background-dark: #2f2937;
+$cta-button-color: #18161f;
 
 $modal-bgc: rgba(28, 26, 35, 1);
 $secondary-bgc: rgba(28, 26, 36, 1);

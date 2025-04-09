@@ -1,11 +1,12 @@
+import classNames from "classnames";
 import { Link, NavLink } from "react-router-dom";
 import LogoRounded from "../../assets/icons/LogoHeader";
+import { useHideHeader } from "../../helpers/hooks";
 import { useAppDispatch } from "../../store";
 import { DIALOG_TYPE, openDialog } from "../../store/dialog/slice";
+import ThemeSwitcher from "../shared/ThemeSwitcher/ThemeSwitcher";
 import { Select } from "../shared/ui/Select/Select";
 import "./Header.scss";
-import { useHideHeader } from "../../helpers/hooks";
-import classNames from "classnames";
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -16,7 +17,11 @@ const Header = () => {
   };
 
   return (
-    <header className={classNames("header", { "opaque": !isHeaderVisible })}>
+    <header
+      className={classNames("header", {
+        opaque: !isHeaderVisible,
+      })}
+    >
       <div className="header__container">
         <nav className="nav">
           <div className="nav__logo">
@@ -47,6 +52,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="nav__right">
+            <ThemeSwitcher />
             <Select />
             <button
               className="nav__cta-button"
